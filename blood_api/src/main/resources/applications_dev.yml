@@ -1,0 +1,9 @@
+elasticSearchDB : ""
+elasticSearchUserName : ""
+elasticSearchPassword : ""
+
+authEnabled : true
+
+
+# logging
+
