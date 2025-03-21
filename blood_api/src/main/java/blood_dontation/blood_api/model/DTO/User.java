@@ -3,6 +3,7 @@ package blood_dontation.blood_api.model.DTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.locationtech.jts.geom.Point;
 
 @Entity
 @Table(name = "users")
@@ -22,4 +23,10 @@ public class User {
     private String email;
     private String city;
     private int weight;
+    private String phoneNumber;
+    private String bloodGroup;
+
+    @Column(columnDefinition = "geometry(Point, 4326)")
+    private Point location;
+
 }
