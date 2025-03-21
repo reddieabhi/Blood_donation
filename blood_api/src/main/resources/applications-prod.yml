@@ -1,0 +1,14 @@
+elasticSearchDB : ""
+elasticSearchUserName : ""
+elasticSearchPassword : ""
+
+spring:
+  datasource:
+    url: jdbc:postgresql://prod-server:5432/prod_db
+    username: prod_user
+    password: prod_pass
+
+authEnabled : true
+
+
+# logging

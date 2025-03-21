@@ -1,0 +1,15 @@
+elasticSearchDB : ""
+elasticSearchUserName : ""
+elasticSearchPassword : ""
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dev_db
+    username: dev_user
+    password: dev_pass
+
+
+authEnabled : true
+
+
+# logging
+
