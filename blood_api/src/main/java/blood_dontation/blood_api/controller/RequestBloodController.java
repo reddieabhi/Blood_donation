@@ -1,21 +1,28 @@
 package blood_dontation.blood_api.controller;
 
+import blood_dontation.blood_api.model.DTO.User;
+import blood_dontation.blood_api.service.RequestBloodService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/blood-request")
 public class RequestBloodController {
 
-    @PostMapping
-    @RequestMapping("/request")
-    public String requestBlood(@RequestParam double lat,
-                               @RequestParam double lng,
-                               @RequestParam String uid,
-                               @RequestParam String bloodGroup) {
+    private final RequestBloodService requestBloodService;
 
-        // go to service find near users and send push notifications.
-        return "Blood request received for UID: " + uid + " at location: (" + lat + ", " + lng + ")";
+    public RequestBloodController(RequestBloodService requestBloodService) {
+        this.requestBloodService = requestBloodService;
     }
 
-
+    @PostMapping("/request")
+    public List<User> requestBlood(@RequestParam double lat,
+                                   @RequestParam double lng,
+                                   @RequestParam String bloodGroup,
+                                   @RequestParam UUID userId) {
+        System.out.printf("=================Lat: %f, Lng: %f, Blood Group: %s, User ID: %s%n", lat, lng, bloodGroup, userId);
+        return requestBloodService.handleBloodRequest(lat, lng, bloodGroup, userId);
+    }
 }
