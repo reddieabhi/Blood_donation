@@ -1,9 +1,12 @@
 package blood_dontation.blood_api.service;
 
 import blood_dontation.blood_api.constants.Constants;
-import blood_dontation.blood_api.model.DTO.Event;
-import blood_dontation.blood_api.model.DTO.User;
+import blood_dontation.blood_api.model.DTO.BloodRequestResponse;
+import blood_dontation.blood_api.model.DTO.UserPushInfo;
+import blood_dontation.blood_api.model.Event;
+import blood_dontation.blood_api.model.User;
 import blood_dontation.blood_api.repository.EventRepository;
+import blood_dontation.blood_api.utils.FCMNotifications;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.criteria.CriteriaBuilder;
@@ -29,43 +32,50 @@ public class RequestBloodService {
 
     @Value("${app.search-radius-km}")
     private double searchRadiusKm;
-    private EventRepository eventRepository;
+
+    private final EventRepository eventRepository;
     private final GeometryFactory geometryFactory = new GeometryFactory();
 
     public RequestBloodService(EventRepository eventRepository) {
+
         this.eventRepository = eventRepository;
     }
 
     @Transactional
-    public List<User> handleBloodRequest(double lat, double lng, String bloodGroup, UUID userId) {
+    public BloodRequestResponse<Event> handleBloodRequest(double lat, double lng, String bloodGroup, UUID userId) {
+        // Find nearby users (fetch only userId & pushToken)
+        List<UserPushInfo> nearbyUsers = findNearbyUsers(lat, lng, bloodGroup);
 
-        List<User> nearbyUsers = findNearbyUsers(lat, lng, bloodGroup);
-
+        // Create event entry in DB
         Point location = geometryFactory.createPoint(new Coordinate(lng, lat));
 
-        Optional<User> userOpt = entityManager.find(User.class, userId) != null
-                ? Optional.of(entityManager.find(User.class, userId))
-                : Optional.empty();
 
-        if (userOpt.isEmpty()) {
-            throw new RuntimeException("User not found!");
+        User user = entityManager.find(User.class, userId);
+        if (user == null) {
+            return  new BloodRequestResponse<>(404, "User not found", null);
         }
 
         Event event = new Event();
-        event.setUser(userOpt.get());
+        event.setUser(user);
         event.setBloodGroup(bloodGroup);
         event.setLocation(location);
         event.setCurrentStatus(Constants.EVENT_STATUS_CREATED);
         eventRepository.save(event);
 
-        return nearbyUsers;
+        // Send push notifications to nearby users
+        if (!nearbyUsers.isEmpty()) {
+            boolean sent = FCMNotifications.sendPushNotifications(nearbyUsers, bloodGroup);
+            if (!sent){
+                return  new BloodRequestResponse<>(500, "Event created but push notifications not sent", event);
+            }
+        }
+        return new BloodRequestResponse<>(200, "Event created successfully", event);
     }
 
-    public List<User> findNearbyUsers(double lat, double lng, String bloodGroup) {
+    public List<UserPushInfo> findNearbyUsers(double lat, double lng, String bloodGroup) {
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-        CriteriaQuery<User> query = cb.createQuery(User.class);
+        CriteriaQuery<UserPushInfo> query = cb.createQuery(UserPushInfo.class);
         Root<User> user = query.from(User.class);
-
 
         Predicate withinDistance = cb.isTrue(cb.function("ST_DWithin", Boolean.class,
                 user.get("location"), cb.function("ST_SetSRID", Object.class,
@@ -73,7 +83,11 @@ public class RequestBloodService {
                 cb.literal(searchRadiusKm * 1000)
         ));
 
-        query.select(user).where(withinDistance);
+        Predicate bloodGroupMatch = cb.equal(user.get("bloodGroup"), bloodGroup);
+
+        query.select(cb.construct(UserPushInfo.class, user.get("uid"), user.get("pushToken")))
+                .where(cb.and(withinDistance, bloodGroupMatch));
+
         return entityManager.createQuery(query).getResultList();
     }
 }

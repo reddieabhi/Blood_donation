@@ -1,26 +1,50 @@
 package blood_dontation.blood_api.controller;
 
+import blood_dontation.blood_api.model.User;
+import blood_dontation.blood_api.service.UserService;
+import org.springframework.web.bind.annotation.*;
 
-import blood_dontation.blood_api.model.DTO.User;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
+import java.util.UUID;
 
 @RestController
-@RequestMapping("/home")
+@RequestMapping("/users")
 public class UserController {
 
-    @RequestMapping("/register")
-    public String create(User user){
+    private final UserService userService;
 
-
-        return "abc";
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
 
-    @RequestMapping("/login")
-    public  String login(User user){
+    // Register a new user
+    @PostMapping("/register")
+    public User registerUser(@RequestBody User user) {
+        return userService.registerUser(user);
+    }
 
-        // verify user.Username and user.password from DB.
-        // return a token. (expiry 1 month)
-        return "abc";
+    // Get all users (for admin purposes)
+    @GetMapping("/all")
+    public List<User> getAllUsers() {
+        return userService.getAllUsers();
+    }
+
+    // Get a user by ID
+    @GetMapping("/{id}")
+    public User getUserById(@PathVariable UUID id) {
+        return userService.getUserById(id);
+    }
+
+    // Update user details
+    @PutMapping("/{id}")
+    public User updateUser(@PathVariable UUID id, @RequestBody User updatedUser) {
+        return userService.updateUser(id, updatedUser);
+    }
+
+    // Delete a user
+    @DeleteMapping("/{id}")
+    public String deleteUser(@PathVariable UUID id) {
+        userService.deleteUser(id);
+        return "User deleted successfully!";
     }
 }

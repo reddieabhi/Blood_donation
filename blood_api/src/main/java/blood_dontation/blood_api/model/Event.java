@@ -1,4 +1,4 @@
-package blood_dontation.blood_api.model.DTO;
+package blood_dontation.blood_api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
