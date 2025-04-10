@@ -3,6 +3,7 @@ package blood_dontation.blood_api.utils;
 import blood_dontation.blood_api.model.DTO.UserPushInfo;
 import com.google.firebase.messaging.BatchResponse;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.messaging.Message;
 import com.google.firebase.messaging.MulticastMessage;
 
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import java.util.stream.Collectors;
 
 public class FCMNotifications {
 
-    public static boolean sendPushNotifications(List<UserPushInfo> users, String bloodGroup) {
+    public static boolean sendPushNotifications(List<UserPushInfo> users, String bloodGroup, String msg, String eventId) {
         if (users.isEmpty()) {
             System.out.println("No users found to send notifications.");
             return false;
@@ -31,9 +32,11 @@ public class FCMNotifications {
         }
 
         // Create a push notification message
+
         MulticastMessage message = MulticastMessage.builder()
                 .putData("bloodGroup", bloodGroup)
-                .putData("message", "Urgent Blood Request! A request for blood group " + bloodGroup + " is nearby.")
+                .putData("message", msg)
+                .putData("eventId", eventId)
                 .addAllTokens(registrationTokens)
                 .build();
 
@@ -47,5 +50,27 @@ public class FCMNotifications {
             e.printStackTrace();
             return  false;
         }
+    }
+
+    public static boolean sendPushNotificationssingle(String pushToken, String acceptorId, String msg) {
+        if (pushToken == null || pushToken.isEmpty()){
+            return false;
+        }
+        Message message = Message.builder()
+                .putData("acceptor", acceptorId)
+                .putData("message", msg)
+                .setToken(pushToken)
+                .build();
+
+        try {
+            String response = FirebaseMessaging.getInstance().send(message);
+            System.out.println("Notification sent successfully: " + response);
+            return true;
+        } catch (Exception e) {
+            System.err.println("Failed to send notification: " + e.getMessage());
+            return false;
+        }
+
+
     }
 }

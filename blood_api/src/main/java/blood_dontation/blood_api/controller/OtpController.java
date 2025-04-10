@@ -21,7 +21,7 @@ public class OtpController {
     public Map<String, String> generateOtp(@RequestParam String email) {
         String otp = otpService.generateOtp(email);
 
-        // In real implementation, send OTP via email
+        // send otp to mail
         System.out.println("Generated OTP for " + email + ": " + otp);
 
         Map<String, String> response = new HashMap<>();

@@ -6,12 +6,12 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class BloodRequestResponse<T> {
+public class RequestResponse<T> {
     private int statusCode;
     private String message;
     private T payLoad;
 
-    public BloodRequestResponse(int statusCode, String message, T payLoad){
+    public RequestResponse(int statusCode, String message, T payLoad){
         this.statusCode = statusCode;
         this.message = message;
         this.payLoad = payLoad;
