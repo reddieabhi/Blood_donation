@@ -13,9 +13,9 @@ This application aims to help people finding blood in emergency situations. Our 
 - Allowing multiple donors to accept a blood request.  
 - Connecting blood receivers and donors.
 
-![img.png](img.png)
+![img.png](images/img.png)
 
-![img_1.png](img_1.png)
+![img_1.png](images/img_1.png)
 
 ## Current state
 - This application has main components
