@@ -5,7 +5,7 @@ import lombok.*;
 import java.util.UUID;
 
 @Entity
-@Table(name = "accepted_requests")
+@Table(name = "accepted_requests", uniqueConstraints ={@UniqueConstraint(columnNames = {"eventId", "acceptorId"})} )
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

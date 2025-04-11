@@ -1,5 +1,6 @@
 package blood_dontation.blood_api.controller;
 
+import blood_dontation.blood_api.model.DTO.EventDetailsDTO;
 import blood_dontation.blood_api.model.DTO.RequestResponse;
 import blood_dontation.blood_api.model.Event;
 import blood_dontation.blood_api.service.RequestBloodService;
@@ -17,13 +18,15 @@ public class RequestBloodController {
         this.requestBloodService = requestBloodService;
     }
 
-    @PostMapping("/request")
-    public RequestResponse<Event> requestBlood(@RequestParam double lat,
-                                               @RequestParam double lng,
-                                               @RequestParam String bloodGroup,
-                                               @RequestParam UUID userId,
-                                               @RequestParam String place) {
-        System.out.printf("=================Lat: %f, Lng: %f, Blood Group: %s, User ID: %s%n", lat, lng, bloodGroup, userId);
-        return requestBloodService.handleBloodRequest(lat, lng, bloodGroup, userId);
+    @PostMapping("/request-new-event")
+    public RequestResponse<EventDetailsDTO> requestBlood(@RequestBody EventDetailsDTO eventDetailsDTO) {
+        System.out.println(eventDetailsDTO);
+        return requestBloodService.handleBloodRequest(eventDetailsDTO);
     }
+
+    @GetMapping("/get-event/{id}")
+    public RequestResponse<EventDetailsDTO> getEvent(@PathVariable UUID id){
+        return requestBloodService.getEvent(id);
+    }
+
 }

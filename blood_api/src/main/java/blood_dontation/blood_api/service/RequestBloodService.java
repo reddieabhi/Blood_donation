@@ -1,6 +1,7 @@
 package blood_dontation.blood_api.service;
 
 import blood_dontation.blood_api.constants.Constants;
+import blood_dontation.blood_api.model.DTO.EventDetailsDTO;
 import blood_dontation.blood_api.model.DTO.RequestResponse;
 import blood_dontation.blood_api.model.DTO.UserPushInfo;
 import blood_dontation.blood_api.model.Event;
@@ -21,6 +22,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -41,8 +43,14 @@ public class RequestBloodService {
     }
 
     @Transactional
-    public RequestResponse<Event> handleBloodRequest(double lat, double lng, String bloodGroup, UUID userId) {
+    public RequestResponse<EventDetailsDTO> handleBloodRequest(EventDetailsDTO eventDetailsDTO) {
         // Find nearby users (fetch only userId & pushToken)
+//        double lat, double lng, String bloodGroup, UUID userId
+        double lat = eventDetailsDTO.getLatitude();
+        double lng = eventDetailsDTO.getLongitude();
+        String bloodGroup = eventDetailsDTO.getBloodGroup();
+        UUID userId = eventDetailsDTO.getUserId();
+        String currentStatus = eventDetailsDTO.getCurrentStatus();
         List<UserPushInfo> nearbyUsers = findNearbyUsers(lat, lng, bloodGroup);
 
         // Create event entry in DB
@@ -61,15 +69,17 @@ public class RequestBloodService {
         event.setCurrentStatus(Constants.EVENT_STATUS_CREATED);
         eventRepository.save(event);
 
+        eventDetailsDTO = getEventDetailsDTOfromEvent(event);
+
         // Send push notifications to nearby users
         String msg = "Urgent Blood Request! A request for blood group " + bloodGroup + " is nearby.";
         if (!nearbyUsers.isEmpty()) {
             boolean sent = FCMNotifications.sendPushNotifications(nearbyUsers, bloodGroup, msg, event.getUser().getUid().toString());
             if (!sent){
-                return  new RequestResponse<>(500, "Event created but push notifications not sent", event);
+                return  new RequestResponse<>(500, "Event created but push notifications not sent", eventDetailsDTO);
             }
         }
-        return new RequestResponse<>(200, "Event created successfully", event);
+        return new RequestResponse<>(200, "Event created successfully", eventDetailsDTO);
     }
 
     public List<UserPushInfo> findNearbyUsers(double lat, double lng, String bloodGroup) {
@@ -89,5 +99,31 @@ public class RequestBloodService {
                 .where(cb.and(withinDistance, bloodGroupMatch));
 
         return entityManager.createQuery(query).getResultList();
+    }
+
+
+    public EventDetailsDTO getEventDetailsDTOfromEvent(Event event){
+        EventDetailsDTO dto = new EventDetailsDTO(
+                event.getUser(),
+                event.getEid(),
+                event.getBloodGroup(),
+                event.getLocation().getY(),  // latitude
+                event.getLocation().getX(),  // longitude
+                event.getPlace(),
+                event.getCurrentStatus()
+        );
+
+        return dto;
+    }
+
+    public RequestResponse<EventDetailsDTO> getEvent(UUID id) {
+        Optional<Event> eventOpt = eventRepository.findById(id);
+
+        if (eventOpt.isEmpty()){
+            return new RequestResponse<>(400, "No event found", null);
+        }
+        Event event = eventOpt.get();
+        EventDetailsDTO eventDetailsDTO = getEventDetailsDTOfromEvent(event);
+        return new RequestResponse<>(200, "Found event", eventDetailsDTO);
     }
 }
