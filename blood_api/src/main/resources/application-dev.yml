@@ -13,9 +13,30 @@ spring:
         format_sql: true
     show-sql: true
 
+
 logging:
   level:
-    com.zaxxer.hikari: ERROR
+    root: INFO
+    com.yourpackage: DEBUG
+    com.zaxxer.hikari.pool.HikariPool: WARN
+    org.springframework.web: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n"
+
+  file:
+    name: logs/app.log
+    max-size: 10MB
+    max-history: 7
+
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB
+      max-history: 7
+
 
 
 
