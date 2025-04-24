@@ -7,7 +7,7 @@ import bloodfinders.blood_api.model.DTO.UserPushTokenDTO;
 import bloodfinders.blood_api.model.Event;
 import bloodfinders.blood_api.model.User;
 import bloodfinders.blood_api.repository.EventRepository;
-import bloodfinders.blood_api.utils.FCMNotifications;
+import bloodfinders.blood_api.fcm.FCMNotifications;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.criteria.CriteriaBuilder;

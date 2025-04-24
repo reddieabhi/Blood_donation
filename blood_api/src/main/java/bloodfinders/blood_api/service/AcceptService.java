@@ -8,7 +8,7 @@ import bloodfinders.blood_api.model.User;
 import bloodfinders.blood_api.repository.AcceptedRequestRepository;
 import bloodfinders.blood_api.repository.EventRepository;
 import bloodfinders.blood_api.repository.UserRepository;
-import bloodfinders.blood_api.utils.FCMNotifications;
+import bloodfinders.blood_api.fcm.FCMNotifications;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
