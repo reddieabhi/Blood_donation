@@ -1,5 +1,6 @@
 package bloodfinders.blood_api.controller;
 
+import bloodfinders.blood_api.model.response.OtpResponse;
 import bloodfinders.blood_api.service.OtpService;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,14 +19,15 @@ public class OtpController {
 
     // Generate OTP and send to email
     @PostMapping("/generate")
-    public Map<String, String> generateOtp(@RequestParam String email) {
-        String otp = otpService.generateOtp(email);
+    public OtpResponse generateOtp(@RequestParam String email, @RequestParam Boolean find) {
+        String otp = otpService.generateOtp(email, find);
 
-        // send otp to mail
         System.out.println("Generated OTP for " + email + ": " + otp);
 
-        Map<String, String> response = new HashMap<>();
-        response.put("message", "OTP sent to " + email);
+        OtpResponse response = new OtpResponse();
+        response.setMessage("OTP sent to " + email);
+        response.setStatusCode(200);
+
         return response;
     }
 
