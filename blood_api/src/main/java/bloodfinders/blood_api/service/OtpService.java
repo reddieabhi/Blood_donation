@@ -1,7 +1,8 @@
 package bloodfinders.blood_api.service;
 
+import bloodfinders.blood_api.constants.Constants;
 import bloodfinders.blood_api.email.EmailService;
-import bloodfinders.blood_api.model.OtpVerification;
+import bloodfinders.blood_api.model.OtpEntity;
 import bloodfinders.blood_api.model.User;
 import bloodfinders.blood_api.model.response.OtpResponse;
 import bloodfinders.blood_api.repository.OtpRepository;
@@ -28,12 +29,12 @@ public class OtpService {
         this.otpRepository = otpRepository;
         this.userRepository = userRepository;
 
-        String smtpHost = "smtp.gmail.com";
-        int smtpPort = 587;
+        String smtpHost = Constants.SMTP_HOST;
+        int smtpPort = Constants.SMTP_PORT;
         this.emailService = new EmailService(smtpHost, smtpPort);
     }
 
-    // Generate OTP and store in DB
+
     public OtpResponse generateOtp(String email, Boolean find) throws MessagingException {
 
         OtpResponse otpResponse = new OtpResponse();
@@ -42,35 +43,53 @@ public class OtpService {
 
             if (userOpt.isEmpty()){
                 otpResponse.setMessage(email + "not found");
-                otpResponse.setStatusCode(404);
+                otpResponse.setStatusCode(Constants.STATUS_NOT_FOUND);
                 return otpResponse;
             }
         }
 
-        String otp = String.format("%06d", new Random().nextInt(1000000));
+        String otp = String.format("%0" + Constants.OTP_LENGTH + "d", new Random().nextInt((int) Math.pow(10, Constants.OTP_LENGTH)));
         logger.info("OTP generated {}", otp);
-        LocalDateTime expiryTime = LocalDateTime.now().plusMinutes(5);
+        LocalDateTime expiryTime = LocalDateTime.now().plusMinutes(Constants.OTP_EXPIRY_MINUTES);
 
-        OtpVerification otpVerification = new OtpVerification();
-        otpVerification.setEmail(email);
-        otpVerification.setOtpCode(otp);
-        otpVerification.setExpiresAt(expiryTime);
+        OtpEntity otpEntity = otpRepository.findByEmail(email); // <- find existing
 
-        otpRepository.save(otpVerification);
+        if (otpEntity != null) {
+            otpEntity.setOtpCode(otp);
+            otpEntity.setExpiresAt(expiryTime);
+            otpEntity.setVerified(false);  // maybe reset verified if needed
+        } else {
 
-        String subject = "Your One-Time Password (OTP)";
-        String body = "Your OTP is: " + otp;
-        emailService.sendEmail(email, subject, body);
+            otpEntity = otpEntityMaker(email, otp, expiryTime);
+        }
+
+        otpRepository.save(otpEntity);
+
+
+        String subject = Constants.OTP_EMAIL_SUBJECT;
+        String body = Constants.OTP_EMAIL_BODY_PREFIX + otp;
+
+        try {
+            emailService.sendEmail(email, subject, body);
+        } catch (MessagingException e) {
+            logger.error("Failed to send OTP email to {}", email, e);
+            otpResponse.setMessage("Failed to send OTP email. Please try again later.");
+            otpResponse.setStatusCode(Constants.STATUS_INTERNAL_SERVER_ERROR);
+            return otpResponse;
+        }
+
+        otpResponse.setMessage("OTP sent successfully to " + email);
+        otpResponse.setStatusCode(Constants.STATUS_OK);
 
         return otpResponse;
     }
 
     // Validate OTP
     public boolean validateOtp(String email, String otpCode) {
-        Optional<OtpVerification> otpOpt = otpRepository.findByEmailAndVerifiedFalse(email);
+        Optional<OtpEntity> otpOpt = otpRepository.findByEmailAndVerifiedFalse(email);
 
         if (otpOpt.isPresent()) {
-            OtpVerification otpVerification = otpOpt.get();
+            OtpEntity otpVerification = otpOpt.get();
 
             if (otpVerification.getExpiresAt().isBefore(LocalDateTime.now())) {
                 return false; // OTP expired
@@ -83,6 +102,16 @@ public class OtpService {
             }
         }
         return false; // Invalid OTP
+    }
+
+    public OtpEntity otpEntityMaker(String email, String otp, LocalDateTime expTime){
+        OtpEntity otpEntity = new OtpEntity();
+        otpEntity.setEmail(email);
+        otpEntity.setOtpCode(otp);
+        otpEntity.setExpiresAt(expTime);
+
+        return  otpEntity;
+
     }
 
     // Delete expired OTPs (Can be scheduled as a cleanup job)

@@ -10,7 +10,7 @@ import java.util.UUID;
 @Setter
 @Entity
 @Table(name = "otp_verification")
-public class OtpVerification {
+public class OtpEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
