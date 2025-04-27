@@ -17,14 +17,14 @@ This application aims to help people finding blood in emergency situations. Our 
 
 ![img_1.png](images/img_1.png)
 
-## Current state
-- This application has main components
+## Current status
+- This application has two main components
 1. API service
-   1. API building is almost done.
+   1. API building is done.
    2. Completed Request blood, accept request and sending notification methods.
-   3. User registration and authentication - yet to start 
+   3. User registration and authentication - done
 2. Apk for user interaction 
-   1. Yet to start
+   1. In progress.
    
 
 ## Contributions
