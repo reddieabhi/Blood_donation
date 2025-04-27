@@ -2,9 +2,10 @@ package bloodfinders.blood_api.service;
 
 import bloodfinders.blood_api.constants.Constants;
 import bloodfinders.blood_api.email.EmailService;
+import bloodfinders.blood_api.jwt.JwtUtil;
 import bloodfinders.blood_api.model.OtpEntity;
 import bloodfinders.blood_api.model.User;
-import bloodfinders.blood_api.model.response.OtpResponse;
+import bloodfinders.blood_api.model.response.ApiResponse;
 import bloodfinders.blood_api.repository.OtpRepository;
 import bloodfinders.blood_api.repository.UserRepository;
 import jakarta.mail.MessagingException;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Random;
+import java.util.UUID;
 
 @Service
 public class OtpService {
@@ -23,11 +25,13 @@ public class OtpService {
     private final UserRepository userRepository;
     private final EmailService emailService;
     private static final Logger logger = LoggerFactory.getLogger(OtpService.class);
+    private final JwtUtil jwtUtil;
 
 
-    public OtpService(OtpRepository otpRepository, UserRepository userRepository) {
+    public OtpService(OtpRepository otpRepository, UserRepository userRepository, JwtUtil jwtUtil) {
         this.otpRepository = otpRepository;
         this.userRepository = userRepository;
+        this.jwtUtil = jwtUtil;
 
         String smtpHost = Constants.SMTP_HOST;
         int smtpPort = Constants.SMTP_PORT;
@@ -35,9 +39,9 @@ public class OtpService {
     }
 
 
-    public OtpResponse generateOtp(String email, Boolean find) throws MessagingException {
+    public ApiResponse generateOtp(String email, Boolean find) throws MessagingException {
 
-        OtpResponse otpResponse = new OtpResponse();
+        ApiResponse otpResponse = new ApiResponse();
         if (find){
             Optional<User> userOpt = userRepository.findByEmail(email);
 
@@ -85,23 +89,39 @@ public class OtpService {
     }
 
     // Validate OTP
-    public boolean validateOtp(String email, String otpCode) {
+    public ApiResponse validateOtp(String email, String otpCode) {
         Optional<OtpEntity> otpOpt = otpRepository.findByEmailAndVerifiedFalse(email);
+        ApiResponse response = new ApiResponse();
 
         if (otpOpt.isPresent()) {
             OtpEntity otpVerification = otpOpt.get();
 
             if (otpVerification.getExpiresAt().isBefore(LocalDateTime.now())) {
-                return false; // OTP expired
+                response.setMessage(Constants.OTP_EXPIRED);
+                response.setStatusCode(400);
+                response.setPayload(null);
+                response.setJwtToken(null);
+                return response;
             }
 
             if (otpVerification.getOtpCode().equals(otpCode)) {
                 otpVerification.setVerified(true);
                 otpRepository.save(otpVerification);
-                return true; // OTP valid
+                long EXPIRATION_TIME = 1000L * 60 * 5;
+                String JwtToken = jwtUtil.generateToken(UUID.fromString(Constants.USER_FOR_VERIFIED_OTP_JWT), EXPIRATION_TIME);
+                response.setMessage(Constants.OTP_VALID);
+                response.setStatusCode(Constants.STATUS_OK);
+                response.setPayload("Success");
+                response.setJwtToken(JwtToken);
+                return response;
             }
         }
-        return false; // Invalid OTP
+
+        response.setMessage(Constants.INVALID_OTP);
+        response.setStatusCode(Constants.STATUS_UNAUTHORIZED);
+        response.setPayload(null);
+        response.setJwtToken(null);
+        return response;
     }
 
     public OtpEntity otpEntityMaker(String email, String otp, LocalDateTime expTime){

@@ -1,16 +1,13 @@
 package bloodfinders.blood_api.controller;
 
-import bloodfinders.blood_api.model.DTO.RequestResponse;
+import bloodfinders.blood_api.model.response.RequestResponse;
 import bloodfinders.blood_api.model.DTO.UserInfoDTO;
-import bloodfinders.blood_api.model.DTO.UserRegisterDTO;
-import bloodfinders.blood_api.model.DTO.UserRegisterLoginDTO;
-import bloodfinders.blood_api.model.User;
+import bloodfinders.blood_api.model.request.UserRegisterDTO;
+import bloodfinders.blood_api.model.response.UserRegisterLoginDTO;
 import bloodfinders.blood_api.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.UUID;
 @RestController
 @RequestMapping("/users")

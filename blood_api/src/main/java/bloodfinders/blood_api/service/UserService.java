@@ -1,10 +1,10 @@
 package bloodfinders.blood_api.service;
 
 import bloodfinders.blood_api.jwt.JwtUtil;
-import bloodfinders.blood_api.model.DTO.RequestResponse;
+import bloodfinders.blood_api.model.response.RequestResponse;
 import bloodfinders.blood_api.model.DTO.UserInfoDTO;
-import bloodfinders.blood_api.model.DTO.UserRegisterDTO;
-import bloodfinders.blood_api.model.DTO.UserRegisterLoginDTO;
+import bloodfinders.blood_api.model.request.UserRegisterDTO;
+import bloodfinders.blood_api.model.response.UserRegisterLoginDTO;
 import bloodfinders.blood_api.model.User;
 import bloodfinders.blood_api.repository.UserRepository;
 import lombok.RequiredArgsConstructor;

@@ -14,9 +14,33 @@ public class Constants {
     // OTP
     public static final int OTP_EXPIRY_MINUTES = 5;
     public static final int OTP_LENGTH = 6;
+    public static final String OTP_EXPIRED = "Otp Expired";
+    public static final String INVALID_OTP = "Otp Invalid";
+    public static final String OTP_VALID = "OTP verified successfully";
 
     //Status codes
     public static final int STATUS_OK = 200;
     public static final int STATUS_NOT_FOUND = 404;
     public static final int STATUS_INTERNAL_SERVER_ERROR = 500;
+    public static final int STATUS_UNAUTHORIZED = 401;
+    public static final int STATUS_INVALID = 400;
+
+    //users
+    public static final String USER_FOR_VERIFIED_OTP_JWT = "OTP_VERIFIED";
+
+    //Login
+    public static final String EMAIL_PASSWORD_EMPTY = "Email or password cannot be empty";
+    public static final String USER_NOT_FOUND = "User not found with provided email";
+    public static final String INVALID_PASSWORD = "Invalid Password";
+    public static final String LOGIN_SUCCESS = "User Login success";
+
+    //Expire timings
+    public static final long EXPIRATION_TIME = 1000L * 60 * 60 * 24 * 365;
+    public static final long SHORT_EXPIRE_TIME = 1000L * 60;
+
+
+    //Passwords
+    public static final String UNABLE_TO_CHANGE_PASSWORD = "Unable to change password";
+    public static final String PASSWORD_CHANGE_SUCCESSFULL = "Changed Password Successfully";
+
 }

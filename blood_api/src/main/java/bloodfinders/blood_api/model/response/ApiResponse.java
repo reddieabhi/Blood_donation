@@ -6,10 +6,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class OtpResponse {
+public class ApiResponse {
     private String message;
     private  int statusCode;
     private String payload;
-
-
+    private String jwtToken;
 }

@@ -2,7 +2,7 @@ package bloodfinders.blood_api.service;
 
 import bloodfinders.blood_api.constants.Constants;
 import bloodfinders.blood_api.model.DTO.EventDetailsDTO;
-import bloodfinders.blood_api.model.DTO.RequestResponse;
+import bloodfinders.blood_api.model.response.RequestResponse;
 import bloodfinders.blood_api.model.DTO.UserPushTokenDTO;
 import bloodfinders.blood_api.model.Event;
 import bloodfinders.blood_api.model.User;

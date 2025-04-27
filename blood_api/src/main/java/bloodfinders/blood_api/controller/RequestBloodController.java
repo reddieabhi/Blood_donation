@@ -1,7 +1,7 @@
 package bloodfinders.blood_api.controller;
 
 import bloodfinders.blood_api.model.DTO.EventDetailsDTO;
-import bloodfinders.blood_api.model.DTO.RequestResponse;
+import bloodfinders.blood_api.model.response.RequestResponse;
 import bloodfinders.blood_api.service.RequestBloodService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

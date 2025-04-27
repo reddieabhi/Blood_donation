@@ -1,4 +1,4 @@
-package bloodfinders.blood_api.model.DTO;
+package bloodfinders.blood_api.model.response;
 
 
 import lombok.Getter;
