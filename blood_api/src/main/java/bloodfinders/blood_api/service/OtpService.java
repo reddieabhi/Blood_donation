@@ -11,6 +11,8 @@ import bloodfinders.blood_api.repository.UserRepository;
 import jakarta.mail.MessagingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -39,7 +41,7 @@ public class OtpService {
     }
 
 
-    public ApiResponse generateOtp(String email, Boolean find) throws MessagingException {
+    public ResponseEntity<ApiResponse> generateOtp(String email, Boolean find) throws MessagingException {
 
         ApiResponse otpResponse = new ApiResponse();
         if (find){
@@ -50,7 +52,7 @@ public class OtpService {
                 otpResponse.setMessage(email + "not found");
                 otpResponse.setStatusCode(Constants.STATUS_NOT_FOUND);
                 logger.error("No user found with provided email");
-                return otpResponse;
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(otpResponse);
             }
         }
 
@@ -82,18 +84,18 @@ public class OtpService {
             logger.error("Failed to send OTP email to {}", email, e);
             otpResponse.setMessage("Failed to send OTP email. Please try again later.");
             otpResponse.setStatusCode(Constants.STATUS_INTERNAL_SERVER_ERROR);
-            return otpResponse;
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(otpResponse);
         }
 
         otpResponse.setMessage("OTP sent successfully to " + email);
         otpResponse.setStatusCode(Constants.STATUS_OK);
         logger.info("OTP sent successfully to {}", email);
 
-        return otpResponse;
+        return ResponseEntity.status(HttpStatus.OK).body(otpResponse);
     }
 
     // Validate OTP
-    public ApiResponse validateOtp(String email, String otpCode) {
+    public ResponseEntity<ApiResponse> validateOtp(String email, String otpCode) {
         Optional<OtpEntity> otpOpt = otpRepository.findByEmailAndVerifiedFalse(email);
         ApiResponse response = new ApiResponse();
 
@@ -107,7 +109,7 @@ public class OtpService {
                 response.setStatusCode(400);
                 response.setPayload(null);
                 response.setJwtToken(null);
-                return response;
+                return ResponseEntity.badRequest().body(response);
             }
 
             if (otpVerification.getOtpCode().equals(otpCode)) {
@@ -120,21 +122,21 @@ public class OtpService {
                 response.setStatusCode(Constants.STATUS_OK);
                 response.setPayload("Success");
                 response.setJwtToken(JwtToken);
-                return response;
+                return ResponseEntity.status(HttpStatus.OK).body(response);
             } else {
                 logger.info("Invalid Otp");
                 response.setMessage(Constants.INVALID_OTP);
                 response.setStatusCode(Constants.STATUS_UNAUTHORIZED);
                 response.setPayload(null);
                 response.setJwtToken(null);
-                return response;
+                return ResponseEntity.badRequest().body(response);
             }
         }
 
         logger.error("No otp delivered for provided email {}", email);
         response.setStatusCode(Constants.STATUS_NOT_FOUND);
         response.setMessage("No otp delivered for provided email" + email);
-        return response;
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
 
     }
 

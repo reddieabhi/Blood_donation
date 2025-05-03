@@ -5,6 +5,7 @@ import bloodfinders.blood_api.model.response.RequestResponse;
 import bloodfinders.blood_api.service.RequestBloodService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -22,13 +23,13 @@ public class RequestBloodController {
     }
 
     @PostMapping("/request-new-event")
-    public RequestResponse<EventDetailsDTO> requestBlood(@RequestBody EventDetailsDTO eventDetailsDTO) {
+    public ResponseEntity<EventDetailsDTO> requestBlood(@RequestBody EventDetailsDTO eventDetailsDTO) {
         logger.info("Received new blood request {}", eventDetailsDTO);
         return requestBloodService.handleBloodRequest(eventDetailsDTO);
     }
 
     @GetMapping("/get-event/{id}")
-    public RequestResponse<EventDetailsDTO> getEvent(@PathVariable UUID id){
+    public ResponseEntity<EventDetailsDTO> getEvent(@PathVariable UUID id){
         return requestBloodService.getEvent(id);
     }
 

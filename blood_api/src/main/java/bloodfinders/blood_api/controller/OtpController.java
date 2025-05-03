@@ -5,6 +5,7 @@ import bloodfinders.blood_api.service.OtpService;
 import jakarta.mail.MessagingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -21,14 +22,14 @@ public class OtpController {
 
     // Generate OTP and send to email
     @PostMapping("/generate")
-    public ApiResponse generateOtp(@RequestParam String email, @RequestParam Boolean find) throws MessagingException {
+    public ResponseEntity<ApiResponse> generateOtp(@RequestParam String email, @RequestParam Boolean find) throws MessagingException {
         logger.info("Generating Otp to mail {}", email);
         return otpService.generateOtp(email, find);
     }
 
     // Verify OTP
     @PostMapping("/verify")
-    public ApiResponse verifyOtp(@RequestParam String email, @RequestParam String otp) {
+    public ResponseEntity<ApiResponse> verifyOtp(@RequestParam String email, @RequestParam String otp) {
          return otpService.validateOtp(email, otp);
     }
 }

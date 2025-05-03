@@ -20,6 +20,8 @@ import org.locationtech.jts.geom.Point;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -47,7 +49,7 @@ public class RequestBloodService {
     }
 
     @Transactional
-    public RequestResponse<EventDetailsDTO> handleBloodRequest(EventDetailsDTO eventDetailsDTO) {
+    public ResponseEntity<EventDetailsDTO> handleBloodRequest(EventDetailsDTO eventDetailsDTO) {
 
         double lat = eventDetailsDTO.getLatitude();
         double lng = eventDetailsDTO.getLongitude();
@@ -72,8 +74,10 @@ public class RequestBloodService {
 
         User user = entityManager.find(User.class, userId);
         if (user == null) {
-            return  new RequestResponse<>(404, "User not found", null);
+//            return  new RequestResponse<>(404, "User not found", null);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).header("Message", "User not found").body(null);
         }
+
 
         Event event = new Event();
         event.setUser(user);
@@ -89,10 +93,10 @@ public class RequestBloodService {
         if (!nearbyUsers.isEmpty()) {
             boolean sent = FCMNotifications.sendPushNotifications(nearbyUsers, bloodGroup, msg, event.getUser().getUid().toString());
             if (!sent){
-                return  new RequestResponse<>(500, "Event created but push notifications not sent", eventDetailsDTO);
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).header("Message", "Event created but push notifications not sent").body(eventDetailsDTO);
             }
         }
-        return new RequestResponse<>(200, "Event created successfully", eventDetailsDTO);
+        return ResponseEntity.status(HttpStatus.OK).header("Message", "Event created Successfully").body(eventDetailsDTO);
     }
 
     public List<UserPushTokenDTO> findNearbyUsers(double lat, double lng) {
@@ -134,14 +138,14 @@ public class RequestBloodService {
         return dto;
     }
 
-    public RequestResponse<EventDetailsDTO> getEvent(UUID id) {
+    public ResponseEntity<EventDetailsDTO> getEvent(UUID id) {
         Optional<Event> eventOpt = eventRepository.findById(id);
 
         if (eventOpt.isEmpty()){
-            return new RequestResponse<>(400, "No event found", null);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).header("Message", "No event found").body(null);
         }
         Event event = eventOpt.get();
         EventDetailsDTO eventDetailsDTO = getEventDetailsDTOfromEvent(event);
-        return new RequestResponse<>(200, "Found event", eventDetailsDTO);
+        return ResponseEntity.status(HttpStatus.OK).header("Message", "Found event").body(eventDetailsDTO);
     }
 }
