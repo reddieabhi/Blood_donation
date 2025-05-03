@@ -1,94 +1,66 @@
-2025-04-26 15:04:44 INFO  [main] b.blood_api.BloodApiApplicationTests - Starting BloodApiApplicationTests using Java 23.0.2 with PID 4323 (started by abhinayreddybellamkonda in /Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api)
-2025-04-26 15:04:44 INFO  [main] b.blood_api.BloodApiApplicationTests - The following 1 profile is active: "dev"
-2025-04-26 15:04:45 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-26 15:04:45 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 4 JPA repository interfaces.
-2025-04-26 15:04:45 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-26 15:04:45 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
-2025-04-26 15:04:45 INFO  [main] o.h.s.integration.SpatialService - HHH80000001: hibernate-spatial integration enabled : true
-2025-04-26 15:04:45 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-04-26 15:04:45 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-04-26 15:04:45 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-04-26 15:04:45 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 15:04:45 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-26 15:04:45 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 15:04:45 INFO  [main] org.hibernate.spatial - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 15:04:45 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-26 15:04:45 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-26 15:04:46 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-26 15:04:46 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+2025-04-27 11:13:19 INFO  [main] b.blood_api.BloodApiApplicationTests - Starting BloodApiApplicationTests using Java 23.0.2 with PID 8498 (started by abhinayreddybellamkonda in /Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api)
+2025-04-27 11:13:19 INFO  [main] b.blood_api.BloodApiApplicationTests - The following 1 profile is active: "dev"
+2025-04-27 11:13:20 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-27 11:13:20 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 4 JPA repository interfaces.
+2025-04-27 11:13:20 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-27 11:13:20 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-27 11:13:20 INFO  [main] o.h.s.integration.SpatialService - HHH80000001: hibernate-spatial integration enabled : true
+2025-04-27 11:13:20 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-27 11:13:20 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-27 11:13:20 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-27 11:13:20 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:13:20 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-27 11:13:20 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:13:20 INFO  [main] org.hibernate.spatial - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:13:20 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-27 11:13:20 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 11:13:20 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-27 11:13:20 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
 
-Using generated security password: e0d57d72-2d8a-40c2-98ff-0357dddf70fd
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-04-26 15:04:46 INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@57cc0333, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4e22dadb, org.springframework.security.web.context.SecurityContextHolderFilter@7d7888a5, org.springframework.security.web.header.HeaderWriterFilter@1b897ffb, org.springframework.web.filter.CorsFilter@5aa2758a, org.springframework.security.web.authentication.logout.LogoutFilter@1a0e5c0c, bloodfinders.blood_api.jwt.JwtAuthFilter@31daf094, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4accc3de, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a23136f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1a916120, org.springframework.security.web.session.SessionManagementFilter@5b697993, org.springframework.security.web.access.ExceptionTranslationFilter@6b7ebac1, org.springframework.security.web.access.intercept.AuthorizationFilter@18419ab7]
-2025-04-26 15:04:46 INFO  [main] b.blood_api.BloodApiApplicationTests - Started BloodApiApplicationTests in 1.517 seconds (process running for 1.874)
-2025-04-26 15:04:46 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-26 15:04:46 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-04-26 15:04:46 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-04-26 15:09:00 INFO  [main] b.blood_api.BloodApiApplicationTests - Starting BloodApiApplicationTests using Java 23.0.2 with PID 4408 (started by abhinayreddybellamkonda in /Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api)
-2025-04-26 15:09:00 INFO  [main] b.blood_api.BloodApiApplicationTests - The following 1 profile is active: "dev"
-2025-04-26 15:09:00 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-26 15:09:00 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 4 JPA repository interfaces.
-2025-04-26 15:09:00 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-26 15:09:00 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
-2025-04-26 15:09:00 INFO  [main] o.h.s.integration.SpatialService - HHH80000001: hibernate-spatial integration enabled : true
-2025-04-26 15:09:00 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-04-26 15:09:00 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-04-26 15:09:00 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-04-26 15:09:01 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 15:09:01 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-26 15:09:01 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 15:09:01 INFO  [main] org.hibernate.spatial - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 15:09:01 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-26 15:09:01 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-26 15:09:01 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-26 15:09:01 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
-
-Using generated security password: 78ca32df-e118-48bb-8632-da0c698d0a69
+Using generated security password: ce34e839-6969-4b02-a978-81e8dd88a55e
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2025-04-26 15:09:01 INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5bb45afc, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2f0b5d79, org.springframework.security.web.context.SecurityContextHolderFilter@1254a3cd, org.springframework.security.web.header.HeaderWriterFilter@20f3291d, org.springframework.web.filter.CorsFilter@1e186006, org.springframework.security.web.authentication.logout.LogoutFilter@431f8830, bloodfinders.blood_api.jwt.JwtAuthFilter@4a0f4282, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@230dd372, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@663cc8c9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@761ea1f5, org.springframework.security.web.session.SessionManagementFilter@3074575a, org.springframework.security.web.access.ExceptionTranslationFilter@2a5c115b, org.springframework.security.web.access.intercept.AuthorizationFilter@2472ba04]
-2025-04-26 15:09:01 INFO  [main] b.blood_api.BloodApiApplicationTests - Started BloodApiApplicationTests in 1.367 seconds (process running for 1.681)
-2025-04-26 15:09:02 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-26 15:09:02 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-04-26 15:09:02 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-04-26 15:09:23 INFO  [main] b.blood_api.BloodApiApplication - Starting BloodApiApplication v0.0.1-SNAPSHOT using Java 21.0.6 with PID 4434 (/Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api/target/blood_api-0.0.1-SNAPSHOT.jar started by abhinayreddybellamkonda in /Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api)
-2025-04-26 15:09:23 INFO  [main] b.blood_api.BloodApiApplication - The following 1 profile is active: "dev"
-2025-04-26 15:09:23 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-26 15:09:23 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 4 JPA repository interfaces.
-2025-04-26 15:09:23 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-04-26 15:09:23 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-04-26 15:09:23 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-04-26 15:09:23 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-04-26 15:09:23 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 553 ms
-2025-04-26 15:09:23 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-26 15:09:23 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
-2025-04-26 15:09:23 INFO  [main] o.h.s.integration.SpatialService - HHH80000001: hibernate-spatial integration enabled : true
-2025-04-26 15:09:23 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-04-26 15:09:23 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-04-26 15:09:23 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-04-26 15:09:23 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 15:09:24 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-26 15:09:24 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 15:09:24 INFO  [main] org.hibernate.spatial - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 15:09:24 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-26 15:09:24 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-26 15:09:24 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-26 15:09:24 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+2025-04-27 11:13:21 INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7fd3c38b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@27260f9c, org.springframework.security.web.context.SecurityContextHolderFilter@7fd7085d, org.springframework.security.web.header.HeaderWriterFilter@5f510929, org.springframework.web.filter.CorsFilter@25031fd4, org.springframework.security.web.authentication.logout.LogoutFilter@7fb2645b, bloodfinders.blood_api.jwt.JwtAuthFilter@22bca04e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@9120cb5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@18419ab7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@54faa040, org.springframework.security.web.session.SessionManagementFilter@2446597e, org.springframework.security.web.access.ExceptionTranslationFilter@3791160a, org.springframework.security.web.access.intercept.AuthorizationFilter@58fb5b8f]
+2025-04-27 11:13:21 INFO  [main] b.blood_api.BloodApiApplicationTests - Started BloodApiApplicationTests in 1.564 seconds (process running for 1.937)
+2025-04-27 11:13:21 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 11:13:21 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-27 11:13:21 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-27 11:13:28 INFO  [main] b.blood_api.BloodApiApplication - Starting BloodApiApplication v0.0.1-SNAPSHOT using Java 21.0.6 with PID 8517 (/Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api/target/blood_api-0.0.1-SNAPSHOT.jar started by abhinayreddybellamkonda in /Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api)
+2025-04-27 11:13:28 INFO  [main] b.blood_api.BloodApiApplication - The following 1 profile is active: "dev"
+2025-04-27 11:13:29 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-27 11:13:29 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 4 JPA repository interfaces.
+2025-04-27 11:13:29 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-27 11:13:29 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-27 11:13:29 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-04-27 11:13:29 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-27 11:13:29 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 505 ms
+2025-04-27 11:13:29 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-27 11:13:29 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-27 11:13:29 INFO  [main] o.h.s.integration.SpatialService - HHH80000001: hibernate-spatial integration enabled : true
+2025-04-27 11:13:29 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-27 11:13:29 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-27 11:13:29 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-27 11:13:29 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:13:29 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-27 11:13:29 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:13:29 INFO  [main] org.hibernate.spatial - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:13:30 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-27 11:13:30 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 11:13:30 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-27 11:13:30 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
 
-Using generated security password: a66ff728-aee2-40e7-95a9-cbea2d8c98c1
+Using generated security password: 75f039a6-50f5-4904-9ed9-ba392c612d7b
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2025-04-26 15:09:24 INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@74130456, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3b171fbd, org.springframework.security.web.context.SecurityContextHolderFilter@6c120b00, org.springframework.security.web.header.HeaderWriterFilter@240e61, org.springframework.web.filter.CorsFilter@1ece052b, org.springframework.security.web.authentication.logout.LogoutFilter@5625e7e1, bloodfinders.blood_api.jwt.JwtAuthFilter@1e2c0292, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2709e075, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3328db4f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20dc763b, org.springframework.security.web.session.SessionManagementFilter@189f3ccd, org.springframework.security.web.access.ExceptionTranslationFilter@7925e772, org.springframework.security.web.access.intercept.AuthorizationFilter@2330c995]
-2025-04-26 15:09:24 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
-2025-04-26 15:09:24 INFO  [main] b.blood_api.BloodApiApplication - Started BloodApiApplication in 1.982 seconds (process running for 2.19)
-2025-04-26 15:12:01 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-26 15:12:01 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-04-26 15:12:01 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-04-26 15:12:01 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+2025-04-27 11:13:30 INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@22e650e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@30a79476, org.springframework.security.web.context.SecurityContextHolderFilter@23307c6c, org.springframework.security.web.header.HeaderWriterFilter@2ca464bb, org.springframework.web.filter.CorsFilter@376bae20, org.springframework.security.web.authentication.logout.LogoutFilter@2db75e32, bloodfinders.blood_api.jwt.JwtAuthFilter@257708e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7202009e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@133d0471, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@37f0fb02, org.springframework.security.web.session.SessionManagementFilter@77d42ed7, org.springframework.security.web.access.ExceptionTranslationFilter@6e5df971, org.springframework.security.web.access.intercept.AuthorizationFilter@15324f25]
+2025-04-27 11:13:30 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-27 11:13:30 INFO  [main] b.blood_api.BloodApiApplication - Started BloodApiApplication in 1.934 seconds (process running for 2.197)
+2025-04-27 11:14:05 INFO  [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-27 11:14:05 INFO  [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-27 11:14:05 INFO  [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-04-27 11:14:05 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
     select
         u1_0.uid,
         u1_0.dob,
@@ -107,675 +79,8 @@ This generated password is for development use only. Your security configuration
         users u1_0 
     where
         u1_0.uid=?
-2025-04-26 15:12:01 INFO  [http-nio-8080-exec-1] b.blood_api.service.OtpService - OTP generated 321209
-2025-04-26 15:12:01 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
-    insert 
-    into
-        otp_verification
-        (email, expires_at, otp_code, verified, id) 
-    values
-        (?, ?, ?, ?, ?)
-2025-04-26 15:12:18 ERROR [http-nio-8080-exec-1] b.blood_api.service.OtpService - Failed to send OTP email to djangomailabhi@gmail.com
-jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. For more information, go to
-535 5.7.8  https://support.google.com/mail/?p=BadCredentials 98e67ed59e1d1-309ef1246c1sm4989782a91.33 - gsmtp
-
-	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:947)
-	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:858)
-	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:762)
-	at jakarta.mail.Service.connect(Service.java:364)
-	at jakarta.mail.Service.connect(Service.java:222)
-	at jakarta.mail.Service.connect(Service.java:171)
-	at jakarta.mail.Transport.send0(Transport.java:230)
-	at jakarta.mail.Transport.send(Transport.java:100)
-	at bloodfinders.blood_api.email.EmailService.sendEmailInternal(EmailService.java:63)
-	at bloodfinders.blood_api.email.EmailService.sendEmail(EmailService.java:32)
-	at bloodfinders.blood_api.service.OtpService.generateOtp(OtpService.java:63)
-	at bloodfinders.blood_api.controller.OtpController.generateOtp(OtpController.java:24)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:261)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:189)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
-	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
-	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at bloodfinders.blood_api.jwt.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:59)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-2025-04-26 15:14:18 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-26 15:14:18 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-04-26 15:14:18 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-04-26 15:15:06 INFO  [main] b.blood_api.BloodApiApplicationTests - Starting BloodApiApplicationTests using Java 23.0.2 with PID 4725 (started by abhinayreddybellamkonda in /Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api)
-2025-04-26 15:15:06 INFO  [main] b.blood_api.BloodApiApplicationTests - The following 1 profile is active: "dev"
-2025-04-26 15:15:06 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-26 15:15:06 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 4 JPA repository interfaces.
-2025-04-26 15:15:06 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-26 15:15:06 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
-2025-04-26 15:15:06 INFO  [main] o.h.s.integration.SpatialService - HHH80000001: hibernate-spatial integration enabled : true
-2025-04-26 15:15:06 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-04-26 15:15:06 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-04-26 15:15:06 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-04-26 15:15:06 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 15:15:06 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-26 15:15:06 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 15:15:06 INFO  [main] org.hibernate.spatial - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 15:15:07 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-26 15:15:07 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-26 15:15:07 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-26 15:15:07 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
-
-Using generated security password: 6a6819c6-5797-48c9-9b67-cdf45c9c627d
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-04-26 15:15:07 INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@57cc0333, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4e22dadb, org.springframework.security.web.context.SecurityContextHolderFilter@7d7888a5, org.springframework.security.web.header.HeaderWriterFilter@1b897ffb, org.springframework.web.filter.CorsFilter@5aa2758a, org.springframework.security.web.authentication.logout.LogoutFilter@1a0e5c0c, bloodfinders.blood_api.jwt.JwtAuthFilter@62c1259f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4accc3de, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a23136f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1a916120, org.springframework.security.web.session.SessionManagementFilter@5b697993, org.springframework.security.web.access.ExceptionTranslationFilter@6b7ebac1, org.springframework.security.web.access.intercept.AuthorizationFilter@18419ab7]
-2025-04-26 15:15:07 INFO  [main] b.blood_api.BloodApiApplicationTests - Started BloodApiApplicationTests in 1.518 seconds (process running for 1.88)
-2025-04-26 15:15:07 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-26 15:15:07 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-04-26 15:15:07 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-04-26 15:15:22 INFO  [main] b.blood_api.BloodApiApplication - Starting BloodApiApplication v0.0.1-SNAPSHOT using Java 21.0.6 with PID 4753 (/Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api/target/blood_api-0.0.1-SNAPSHOT.jar started by abhinayreddybellamkonda in /Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api)
-2025-04-26 15:15:22 INFO  [main] b.blood_api.BloodApiApplication - The following 1 profile is active: "dev"
-2025-04-26 15:15:22 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-26 15:15:22 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 4 JPA repository interfaces.
-2025-04-26 15:15:22 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-04-26 15:15:22 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-04-26 15:15:22 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-04-26 15:15:22 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-04-26 15:15:22 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 492 ms
-2025-04-26 15:15:22 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-26 15:15:22 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
-2025-04-26 15:15:22 INFO  [main] o.h.s.integration.SpatialService - HHH80000001: hibernate-spatial integration enabled : true
-2025-04-26 15:15:22 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-04-26 15:15:22 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-04-26 15:15:22 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-04-26 15:15:22 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 15:15:22 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-26 15:15:23 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 15:15:23 INFO  [main] org.hibernate.spatial - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 15:15:23 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-26 15:15:23 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-26 15:15:23 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-26 15:15:23 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
-
-Using generated security password: a14857b4-f971-451f-8b9e-434206a50bcf
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-04-26 15:15:23 INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@74130456, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3b171fbd, org.springframework.security.web.context.SecurityContextHolderFilter@6c120b00, org.springframework.security.web.header.HeaderWriterFilter@240e61, org.springframework.web.filter.CorsFilter@1ece052b, org.springframework.security.web.authentication.logout.LogoutFilter@5625e7e1, bloodfinders.blood_api.jwt.JwtAuthFilter@1e2c0292, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2709e075, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3328db4f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20dc763b, org.springframework.security.web.session.SessionManagementFilter@189f3ccd, org.springframework.security.web.access.ExceptionTranslationFilter@7925e772, org.springframework.security.web.access.intercept.AuthorizationFilter@2330c995]
-2025-04-26 15:15:23 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
-2025-04-26 15:15:23 INFO  [main] b.blood_api.BloodApiApplication - Started BloodApiApplication in 1.907 seconds (process running for 2.113)
-2025-04-26 15:15:28 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-26 15:15:28 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-04-26 15:15:28 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
-2025-04-26 15:15:28 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
-    select
-        u1_0.uid,
-        u1_0.dob,
-        u1_0.blood_group,
-        u1_0.city,
-        u1_0.email,
-        u1_0.location,
-        u1_0.name,
-        u1_0.password,
-        u1_0.phone_number,
-        u1_0.place,
-        u1_0.push_token,
-        u1_0.user_name,
-        u1_0.weight 
-    from
-        users u1_0 
-    where
-        u1_0.uid=?
-2025-04-26 15:15:28 INFO  [http-nio-8080-exec-1] b.blood_api.service.OtpService - OTP generated 392670
-2025-04-26 15:15:28 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
-    insert 
-    into
-        otp_verification
-        (email, expires_at, otp_code, verified, id) 
-    values
-        (?, ?, ?, ?, ?)
-2025-04-26 15:15:28 WARN  [http-nio-8080-exec-1] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23505
-2025-04-26 15:15:28 ERROR [http-nio-8080-exec-1] o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: duplicate key value violates unique constraint "uk_6myqysapk7j379aq4aec060bw"
-  Detail: Key (email)=(djangomailabhi@gmail.com) already exists.
-2025-04-26 15:15:28 ERROR [http-nio-8080-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [ERROR: duplicate key value violates unique constraint "uk_6myqysapk7j379aq4aec060bw"
-  Detail: Key (email)=(djangomailabhi@gmail.com) already exists.] [insert into otp_verification (email,expires_at,otp_code,verified,id) values (?,?,?,?,?)]; SQL [insert into otp_verification (email,expires_at,otp_code,verified,id) values (?,?,?,?,?)]; constraint [uk_6myqysapk7j379aq4aec060bw]] with root cause
-org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "uk_6myqysapk7j379aq4aec060bw"
-  Detail: Key (email)=(djangomailabhi@gmail.com) already exists.
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401)
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
-	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
-	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
-	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:152)
-	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
-	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
-	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194)
-	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:107)
-	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:40)
-	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:52)
-	at org.hibernate.persister.entity.mutation.InsertCoordinator.doStaticInserts(InsertCoordinator.java:175)
-	at org.hibernate.persister.entity.mutation.InsertCoordinator.coordinateInsert(InsertCoordinator.java:113)
-	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2873)
-	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:104)
-	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:632)
-	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:499)
-	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:363)
-	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41)
-	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
-	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1423)
-	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:504)
-	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2339)
-	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1996)
-	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439)
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169)
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267)
-	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
-	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:561)
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:794)
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:757)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:669)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:419)
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:220)
-	at jdk.proxy2/jdk.proxy2.$Proxy125.save(Unknown Source)
-	at bloodfinders.blood_api.service.OtpService.generateOtp(OtpService.java:57)
-	at bloodfinders.blood_api.controller.OtpController.generateOtp(OtpController.java:24)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:261)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:189)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
-	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
-	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at bloodfinders.blood_api.jwt.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:59)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-2025-04-26 15:17:44 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
-    select
-        u1_0.uid,
-        u1_0.dob,
-        u1_0.blood_group,
-        u1_0.city,
-        u1_0.email,
-        u1_0.location,
-        u1_0.name,
-        u1_0.password,
-        u1_0.phone_number,
-        u1_0.place,
-        u1_0.push_token,
-        u1_0.user_name,
-        u1_0.weight 
-    from
-        users u1_0 
-    where
-        u1_0.uid=?
-2025-04-26 15:17:44 INFO  [http-nio-8080-exec-2] b.blood_api.service.OtpService - OTP generated 059736
-2025-04-26 15:17:44 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
-    insert 
-    into
-        otp_verification
-        (email, expires_at, otp_code, verified, id) 
-    values
-        (?, ?, ?, ?, ?)
-2025-04-26 15:35:29 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m36s315ms).
-2025-04-26 15:52:08 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m38s902ms).
-2025-04-26 16:01:34 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL - 
-    select
-        u1_0.uid,
-        u1_0.dob,
-        u1_0.blood_group,
-        u1_0.city,
-        u1_0.email,
-        u1_0.location,
-        u1_0.name,
-        u1_0.password,
-        u1_0.phone_number,
-        u1_0.place,
-        u1_0.push_token,
-        u1_0.user_name,
-        u1_0.weight 
-    from
-        users u1_0 
-    where
-        u1_0.uid=?
-2025-04-26 16:01:34 INFO  [http-nio-8080-exec-3] b.blood_api.service.OtpService - OTP generated 594892
-2025-04-26 16:01:34 DEBUG [http-nio-8080-exec-3] org.hibernate.SQL - 
-    insert 
-    into
-        otp_verification
-        (email, expires_at, otp_code, verified, id) 
-    values
-        (?, ?, ?, ?, ?)
-2025-04-26 16:01:34 WARN  [http-nio-8080-exec-3] o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23505
-2025-04-26 16:01:34 ERROR [http-nio-8080-exec-3] o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: duplicate key value violates unique constraint "uk_6myqysapk7j379aq4aec060bw"
-  Detail: Key (email)=(abhinayreddyb.309@gmail.com) already exists.
-2025-04-26 16:01:34 ERROR [http-nio-8080-exec-3] o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [ERROR: duplicate key value violates unique constraint "uk_6myqysapk7j379aq4aec060bw"
-  Detail: Key (email)=(abhinayreddyb.309@gmail.com) already exists.] [insert into otp_verification (email,expires_at,otp_code,verified,id) values (?,?,?,?,?)]; SQL [insert into otp_verification (email,expires_at,otp_code,verified,id) values (?,?,?,?,?)]; constraint [uk_6myqysapk7j379aq4aec060bw]] with root cause
-org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "uk_6myqysapk7j379aq4aec060bw"
-  Detail: Key (email)=(abhinayreddyb.309@gmail.com) already exists.
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401)
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
-	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
-	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
-	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:152)
-	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
-	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
-	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194)
-	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:107)
-	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:40)
-	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:52)
-	at org.hibernate.persister.entity.mutation.InsertCoordinator.doStaticInserts(InsertCoordinator.java:175)
-	at org.hibernate.persister.entity.mutation.InsertCoordinator.coordinateInsert(InsertCoordinator.java:113)
-	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2873)
-	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:104)
-	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:632)
-	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:499)
-	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:363)
-	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41)
-	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
-	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1423)
-	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:504)
-	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2339)
-	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1996)
-	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439)
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169)
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267)
-	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
-	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:561)
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:794)
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:757)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:669)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:419)
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:220)
-	at jdk.proxy2/jdk.proxy2.$Proxy125.save(Unknown Source)
-	at bloodfinders.blood_api.service.OtpService.generateOtp(OtpService.java:57)
-	at bloodfinders.blood_api.controller.OtpController.generateOtp(OtpController.java:24)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:261)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:189)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
-	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
-	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
-	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at bloodfinders.blood_api.jwt.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:59)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
-	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
-	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:225)
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-2025-04-26 16:01:43 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-26 16:01:43 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-04-26 16:01:43 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-04-26 16:01:55 INFO  [main] b.blood_api.BloodApiApplicationTests - Starting BloodApiApplicationTests using Java 23.0.2 with PID 4969 (started by abhinayreddybellamkonda in /Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api)
-2025-04-26 16:01:55 INFO  [main] b.blood_api.BloodApiApplicationTests - The following 1 profile is active: "dev"
-2025-04-26 16:01:56 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-26 16:01:56 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 4 JPA repository interfaces.
-2025-04-26 16:01:56 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-26 16:01:56 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
-2025-04-26 16:01:56 INFO  [main] o.h.s.integration.SpatialService - HHH80000001: hibernate-spatial integration enabled : true
-2025-04-26 16:01:56 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-04-26 16:01:56 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-04-26 16:01:56 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-04-26 16:01:56 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 16:01:56 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-26 16:01:56 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 16:01:56 INFO  [main] org.hibernate.spatial - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 16:01:56 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-26 16:01:56 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-26 16:01:57 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-26 16:01:57 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
-
-Using generated security password: 54b6787d-0f3c-4620-a0b5-1ca9069e7f83
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-04-26 16:01:57 INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4f0f56f5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6edb093f, org.springframework.security.web.context.SecurityContextHolderFilter@20f3291d, org.springframework.security.web.header.HeaderWriterFilter@6c75c5e8, org.springframework.web.filter.CorsFilter@7f5c4ff8, org.springframework.security.web.authentication.logout.LogoutFilter@5b697993, bloodfinders.blood_api.jwt.JwtAuthFilter@6f30d0eb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@654dbb78, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1dba7721, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7692c0e9, org.springframework.security.web.session.SessionManagementFilter@2e243122, org.springframework.security.web.access.ExceptionTranslationFilter@6dd7af2f, org.springframework.security.web.access.intercept.AuthorizationFilter@773cc551]
-2025-04-26 16:01:57 INFO  [main] b.blood_api.BloodApiApplicationTests - Started BloodApiApplicationTests in 1.518 seconds (process running for 1.855)
-2025-04-26 16:01:57 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-26 16:01:57 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-04-26 16:01:57 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-04-26 16:02:03 INFO  [main] b.blood_api.BloodApiApplication - Starting BloodApiApplication v0.0.1-SNAPSHOT using Java 21.0.6 with PID 4983 (/Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api/target/blood_api-0.0.1-SNAPSHOT.jar started by abhinayreddybellamkonda in /Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api)
-2025-04-26 16:02:03 INFO  [main] b.blood_api.BloodApiApplication - The following 1 profile is active: "dev"
-2025-04-26 16:02:03 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-04-26 16:02:03 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 4 JPA repository interfaces.
-2025-04-26 16:02:03 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-04-26 16:02:03 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-04-26 16:02:03 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-04-26 16:02:03 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-04-26 16:02:03 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 500 ms
-2025-04-26 16:02:03 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-04-26 16:02:03 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
-2025-04-26 16:02:03 INFO  [main] o.h.s.integration.SpatialService - HHH80000001: hibernate-spatial integration enabled : true
-2025-04-26 16:02:03 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-04-26 16:02:03 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-04-26 16:02:03 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-04-26 16:02:03 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 16:02:04 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-04-26 16:02:04 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 16:02:04 INFO  [main] org.hibernate.spatial - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
-2025-04-26 16:02:04 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-04-26 16:02:04 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-04-26 16:02:04 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-04-26 16:02:04 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
-
-Using generated security password: e59897b4-51e0-4d1b-9ca5-51f5b2b159ef
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-04-26 16:02:04 INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@74130456, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3b171fbd, org.springframework.security.web.context.SecurityContextHolderFilter@6c120b00, org.springframework.security.web.header.HeaderWriterFilter@240e61, org.springframework.web.filter.CorsFilter@1ece052b, org.springframework.security.web.authentication.logout.LogoutFilter@5625e7e1, bloodfinders.blood_api.jwt.JwtAuthFilter@1e2c0292, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2709e075, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3328db4f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20dc763b, org.springframework.security.web.session.SessionManagementFilter@189f3ccd, org.springframework.security.web.access.ExceptionTranslationFilter@7925e772, org.springframework.security.web.access.intercept.AuthorizationFilter@2330c995]
-2025-04-26 16:02:04 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
-2025-04-26 16:02:04 INFO  [main] b.blood_api.BloodApiApplication - Started BloodApiApplication in 1.942 seconds (process running for 2.152)
-2025-04-26 16:02:16 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-26 16:02:16 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-04-26 16:02:16 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-04-26 16:02:16 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
-    select
-        u1_0.uid,
-        u1_0.dob,
-        u1_0.blood_group,
-        u1_0.city,
-        u1_0.email,
-        u1_0.location,
-        u1_0.name,
-        u1_0.password,
-        u1_0.phone_number,
-        u1_0.place,
-        u1_0.push_token,
-        u1_0.user_name,
-        u1_0.weight 
-    from
-        users u1_0 
-    where
-        u1_0.uid=?
-2025-04-26 16:02:17 INFO  [http-nio-8080-exec-1] b.blood_api.service.OtpService - OTP generated 366393
-2025-04-26 16:02:17 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+2025-04-27 11:14:06 INFO  [http-nio-8080-exec-2] b.blood_api.service.OtpService - OTP generated 259751
+2025-04-27 11:14:06 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
     select
         oe1_0.id,
         oe1_0.email,
@@ -786,7 +91,7 @@ This generated password is for development use only. Your security configuration
         otp_verification oe1_0 
     where
         oe1_0.email=?
-2025-04-26 16:02:17 DEBUG [http-nio-8080-exec-1] org.hibernate.SQL - 
+2025-04-27 11:14:06 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
     update
         otp_verification 
     set
@@ -796,51 +101,335 @@ This generated password is for development use only. Your security configuration
         verified=? 
     where
         id=?
-2025-04-26 16:02:29 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
-    select
-        u1_0.uid,
-        u1_0.dob,
-        u1_0.blood_group,
-        u1_0.city,
-        u1_0.email,
-        u1_0.location,
-        u1_0.name,
-        u1_0.password,
-        u1_0.phone_number,
-        u1_0.place,
-        u1_0.push_token,
-        u1_0.user_name,
-        u1_0.weight 
-    from
-        users u1_0 
-    where
-        u1_0.uid=?
-2025-04-26 16:02:29 INFO  [http-nio-8080-exec-2] b.blood_api.service.OtpService - OTP generated 113807
-2025-04-26 16:02:29 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
-    select
-        oe1_0.id,
-        oe1_0.email,
-        oe1_0.expires_at,
-        oe1_0.otp_code,
-        oe1_0.verified 
-    from
-        otp_verification oe1_0 
-    where
-        oe1_0.email=?
-2025-04-26 16:02:29 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - 
-    update
-        otp_verification 
-    set
-        email=?,
-        expires_at=?,
-        otp_code=?,
-        verified=? 
-    where
-        id=?
-2025-04-26 16:07:53 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m19s522ms).
-2025-04-26 17:16:23 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h8m29s901ms).
-2025-04-26 18:26:33 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h10m9s940ms).
-2025-04-26 18:35:04 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m31s51ms).
-2025-04-26 18:35:46 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-04-26 18:35:46 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-04-26 18:35:46 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-27 11:32:04 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 11:32:04 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-27 11:32:04 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-27 11:32:18 INFO  [main] b.blood_api.BloodApiApplicationTests - Starting BloodApiApplicationTests using Java 23.0.2 with PID 8713 (started by abhinayreddybellamkonda in /Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api)
+2025-04-27 11:32:18 INFO  [main] b.blood_api.BloodApiApplicationTests - The following 1 profile is active: "dev"
+2025-04-27 11:32:18 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-27 11:32:18 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 4 JPA repository interfaces.
+2025-04-27 11:32:18 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-27 11:32:18 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-27 11:32:18 INFO  [main] o.h.s.integration.SpatialService - HHH80000001: hibernate-spatial integration enabled : true
+2025-04-27 11:32:18 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-27 11:32:18 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-27 11:32:19 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-27 11:32:19 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:32:19 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-27 11:32:19 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:32:19 INFO  [main] org.hibernate.spatial - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:32:19 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-27 11:32:19 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 11:32:19 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-27 11:32:19 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: de8915e3-f0fa-4723-b2a2-142d1dab4551
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-04-27 11:32:19 INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4cb87009, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@52518ee1, org.springframework.security.web.context.SecurityContextHolderFilter@773cc551, org.springframework.security.web.header.HeaderWriterFilter@5b977aaa, org.springframework.web.filter.CorsFilter@fe38d1e, org.springframework.security.web.authentication.logout.LogoutFilter@7fd7085d, bloodfinders.blood_api.jwt.JwtAuthFilter@38f3dbbf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4f0f56f5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6edb093f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1a4564a2, org.springframework.security.web.session.SessionManagementFilter@11e75942, org.springframework.security.web.access.ExceptionTranslationFilter@51c15508, org.springframework.security.web.access.intercept.AuthorizationFilter@1299fed3]
+2025-04-27 11:32:19 INFO  [main] b.blood_api.BloodApiApplicationTests - Started BloodApiApplicationTests in 1.488 seconds (process running for 1.847)
+2025-04-27 11:32:20 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 11:32:20 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-27 11:32:20 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-27 11:32:29 INFO  [main] b.blood_api.BloodApiApplication - Starting BloodApiApplication v0.0.1-SNAPSHOT using Java 21.0.6 with PID 8731 (/Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api/target/blood_api-0.0.1-SNAPSHOT.jar started by abhinayreddybellamkonda in /Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api)
+2025-04-27 11:32:29 INFO  [main] b.blood_api.BloodApiApplication - The following 1 profile is active: "dev"
+2025-04-27 11:32:30 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-27 11:32:30 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 4 JPA repository interfaces.
+2025-04-27 11:32:30 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-27 11:32:30 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-27 11:32:30 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-04-27 11:32:30 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-27 11:32:30 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 489 ms
+2025-04-27 11:32:30 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-27 11:32:30 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-27 11:32:30 INFO  [main] o.h.s.integration.SpatialService - HHH80000001: hibernate-spatial integration enabled : true
+2025-04-27 11:32:30 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-27 11:32:30 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-27 11:32:30 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-27 11:32:30 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:32:30 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-27 11:32:30 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:32:30 INFO  [main] org.hibernate.spatial - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:32:31 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-27 11:32:31 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 11:32:31 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-27 11:32:31 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 90c2e1c7-9f66-40f9-b932-6919dc007aac
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-04-27 11:32:31 INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5d10e2b6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@267309f7, org.springframework.security.web.context.SecurityContextHolderFilter@1a18e68a, org.springframework.security.web.header.HeaderWriterFilter@e75bae7, org.springframework.web.filter.CorsFilter@46878216, org.springframework.security.web.authentication.logout.LogoutFilter@1ced1d14, bloodfinders.blood_api.jwt.JwtAuthFilter@73dd3a46, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4f63909f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3ae91bcc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2b69ff13, org.springframework.security.web.session.SessionManagementFilter@642b71d6, org.springframework.security.web.access.ExceptionTranslationFilter@1390a43a, org.springframework.security.web.access.intercept.AuthorizationFilter@d4dbb34]
+2025-04-27 11:32:31 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-27 11:32:31 INFO  [main] b.blood_api.BloodApiApplication - Started BloodApiApplication in 1.947 seconds (process running for 2.178)
+2025-04-27 11:32:38 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-27 11:32:38 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-27 11:32:38 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-27 11:32:39 INFO  [http-nio-8080-exec-1] b.b.c.RequestBloodController - Generating Otp to mail djangomailabhi@gmail.com
+2025-04-27 11:32:39 INFO  [http-nio-8080-exec-1] b.blood_api.service.OtpService - OTP generated 136981
+2025-04-27 11:32:39 INFO  [http-nio-8080-exec-1] b.blood_api.service.OtpService - Adding Otp entitity in DB bloodfinders.blood_api.model.OtpEntity@5404ee19
+2025-04-27 11:32:44 INFO  [http-nio-8080-exec-1] b.blood_api.service.OtpService - OTP sent successfully to djangomailabhi@gmail.com
+2025-04-27 11:33:53 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 11:33:53 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-27 11:33:53 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-27 11:34:03 INFO  [main] b.blood_api.BloodApiApplicationTests - Starting BloodApiApplicationTests using Java 23.0.2 with PID 8789 (started by abhinayreddybellamkonda in /Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api)
+2025-04-27 11:34:03 INFO  [main] b.blood_api.BloodApiApplicationTests - The following 1 profile is active: "dev"
+2025-04-27 11:34:04 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-27 11:34:04 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 4 JPA repository interfaces.
+2025-04-27 11:34:04 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-27 11:34:04 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-27 11:34:04 INFO  [main] o.h.s.integration.SpatialService - HHH80000001: hibernate-spatial integration enabled : true
+2025-04-27 11:34:04 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-27 11:34:04 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-27 11:34:04 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-27 11:34:04 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:34:04 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-27 11:34:04 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:34:04 INFO  [main] org.hibernate.spatial - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:34:04 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-27 11:34:04 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 11:34:05 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-27 11:34:05 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 5e5b9bf4-c26b-4bd1-a6d5-5b57a934d94b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-04-27 11:34:05 INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2446597e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8dd0c70, org.springframework.security.web.context.SecurityContextHolderFilter@5bed8b91, org.springframework.security.web.header.HeaderWriterFilter@4010f232, org.springframework.web.filter.CorsFilter@7aad7df5, org.springframework.security.web.authentication.logout.LogoutFilter@55a2ca5e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@738ae785, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@13288174, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7fd7085d, org.springframework.security.web.session.SessionManagementFilter@51c15508, org.springframework.security.web.access.ExceptionTranslationFilter@6c3627c, org.springframework.security.web.access.intercept.AuthorizationFilter@7a91027c]
+2025-04-27 11:34:05 INFO  [main] b.blood_api.BloodApiApplicationTests - Started BloodApiApplicationTests in 1.56 seconds (process running for 1.898)
+2025-04-27 11:34:05 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 11:34:05 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-27 11:34:05 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-27 11:34:07 INFO  [main] b.blood_api.BloodApiApplication - Starting BloodApiApplication v0.0.1-SNAPSHOT using Java 21.0.6 with PID 8806 (/Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api/target/blood_api-0.0.1-SNAPSHOT.jar started by abhinayreddybellamkonda in /Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api)
+2025-04-27 11:34:07 INFO  [main] b.blood_api.BloodApiApplication - The following 1 profile is active: "dev"
+2025-04-27 11:34:08 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-27 11:34:08 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 4 JPA repository interfaces.
+2025-04-27 11:34:08 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-27 11:34:08 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-27 11:34:08 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-04-27 11:34:08 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-27 11:34:08 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 533 ms
+2025-04-27 11:34:08 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-27 11:34:08 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-27 11:34:08 INFO  [main] o.h.s.integration.SpatialService - HHH80000001: hibernate-spatial integration enabled : true
+2025-04-27 11:34:08 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-27 11:34:08 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-27 11:34:08 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-27 11:34:08 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:34:08 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-27 11:34:08 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:34:08 INFO  [main] org.hibernate.spatial - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:34:09 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-27 11:34:09 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 11:34:09 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-27 11:34:09 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: f92151bd-9ee2-4c9f-8cc1-bb38c482c4e7
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-04-27 11:34:09 INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1ced1d14, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@237b54bc, org.springframework.security.web.context.SecurityContextHolderFilter@6c2a33af, org.springframework.security.web.header.HeaderWriterFilter@30ce78e3, org.springframework.web.filter.CorsFilter@5263f554, org.springframework.security.web.authentication.logout.LogoutFilter@65b07b9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@44ba9f25, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@53570fff, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d28efd5, org.springframework.security.web.session.SessionManagementFilter@3531509c, org.springframework.security.web.access.ExceptionTranslationFilter@1bcdd302, org.springframework.security.web.access.intercept.AuthorizationFilter@294b045b]
+2025-04-27 11:34:09 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-27 11:34:09 INFO  [main] b.blood_api.BloodApiApplication - Started BloodApiApplication in 2.016 seconds (process running for 2.23)
+2025-04-27 11:34:19 INFO  [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-27 11:34:19 INFO  [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-27 11:34:19 INFO  [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-27 11:34:19 INFO  [http-nio-8080-exec-2] b.b.c.RequestBloodController - Generating Otp to mail djangomailabhi@gmail.com
+2025-04-27 11:34:19 INFO  [http-nio-8080-exec-2] b.blood_api.service.OtpService - OTP generated 401978
+2025-04-27 11:34:19 INFO  [http-nio-8080-exec-2] b.blood_api.service.OtpService - Adding Otp entitity in DB bloodfinders.blood_api.model.OtpEntity@26785810
+2025-04-27 11:34:24 INFO  [http-nio-8080-exec-2] b.blood_api.service.OtpService - OTP sent successfully to djangomailabhi@gmail.com
+2025-04-27 11:34:46 INFO  [http-nio-8080-exec-3] b.blood_api.service.OtpService - Valid otp, creating JWT and sending to user
+2025-04-27 11:44:40 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m31s473ms).
+2025-04-27 11:48:06 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 11:48:06 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-27 11:48:06 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-27 11:48:45 INFO  [main] b.blood_api.BloodApiApplicationTests - Starting BloodApiApplicationTests using Java 23.0.2 with PID 8925 (started by abhinayreddybellamkonda in /Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api)
+2025-04-27 11:48:45 INFO  [main] b.blood_api.BloodApiApplicationTests - The following 1 profile is active: "dev"
+2025-04-27 11:48:46 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-27 11:48:46 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 4 JPA repository interfaces.
+2025-04-27 11:48:46 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-27 11:48:46 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-27 11:48:46 INFO  [main] o.h.s.integration.SpatialService - HHH80000001: hibernate-spatial integration enabled : true
+2025-04-27 11:48:46 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-27 11:48:46 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-27 11:48:46 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-27 11:48:46 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:48:46 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-27 11:48:46 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:48:46 INFO  [main] org.hibernate.spatial - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:48:46 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-27 11:48:46 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 11:48:47 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-27 11:48:47 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: b2256365-ab24-4a85-8a57-59a975549cd9
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-04-27 11:48:47 INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@f047670, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a91027c, org.springframework.security.web.context.SecurityContextHolderFilter@51c15508, org.springframework.security.web.header.HeaderWriterFilter@24381e4a, org.springframework.web.filter.CorsFilter@27d44578, org.springframework.security.web.authentication.logout.LogoutFilter@3791160a, bloodfinders.blood_api.jwt.JwtAuthFilter@4a0f4282, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b977aaa, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5bed8b91, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2446597e, org.springframework.security.web.session.SessionManagementFilter@88e85a, org.springframework.security.web.access.ExceptionTranslationFilter@654dbb78, org.springframework.security.web.access.intercept.AuthorizationFilter@1e186006]
+2025-04-27 11:48:47 INFO  [main] b.blood_api.BloodApiApplicationTests - Started BloodApiApplicationTests in 1.468 seconds (process running for 1.789)
+2025-04-27 11:48:47 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 11:48:47 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-27 11:48:47 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-27 11:48:49 INFO  [main] b.blood_api.BloodApiApplication - Starting BloodApiApplication v0.0.1-SNAPSHOT using Java 21.0.6 with PID 8940 (/Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api/target/blood_api-0.0.1-SNAPSHOT.jar started by abhinayreddybellamkonda in /Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api)
+2025-04-27 11:48:49 INFO  [main] b.blood_api.BloodApiApplication - The following 1 profile is active: "dev"
+2025-04-27 11:48:50 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-27 11:48:50 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 4 JPA repository interfaces.
+2025-04-27 11:48:50 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-27 11:48:50 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-27 11:48:50 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-04-27 11:48:50 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-27 11:48:50 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 529 ms
+2025-04-27 11:48:50 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-27 11:48:50 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-27 11:48:50 INFO  [main] o.h.s.integration.SpatialService - HHH80000001: hibernate-spatial integration enabled : true
+2025-04-27 11:48:50 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-27 11:48:50 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-27 11:48:50 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-27 11:48:50 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:48:50 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-27 11:48:50 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:48:50 INFO  [main] org.hibernate.spatial - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 11:48:50 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-27 11:48:51 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 11:48:51 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-27 11:48:51 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 297eec70-afd0-4372-a7f1-41ccb1f87ede
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-04-27 11:48:51 INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@37f0fb02, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4687fee7, org.springframework.security.web.context.SecurityContextHolderFilter@133d0471, org.springframework.security.web.header.HeaderWriterFilter@46baac0d, org.springframework.web.filter.CorsFilter@4a0fc665, org.springframework.security.web.authentication.logout.LogoutFilter@1a1c308b, bloodfinders.blood_api.jwt.JwtAuthFilter@4353db40, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@643fed50, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@65b07b9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@207f7baa, org.springframework.security.web.session.SessionManagementFilter@23307c6c, org.springframework.security.web.access.ExceptionTranslationFilter@4767be27, org.springframework.security.web.access.intercept.AuthorizationFilter@30a79476]
+2025-04-27 11:48:51 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-27 11:48:51 INFO  [main] b.blood_api.BloodApiApplication - Started BloodApiApplication in 2.03 seconds (process running for 2.243)
+2025-04-27 11:49:01 INFO  [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-27 11:49:01 INFO  [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-27 11:49:01 INFO  [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-04-27 11:49:01 INFO  [http-nio-8080-exec-2] b.b.c.RequestBloodController - Generating Otp to mail djangomailabhi@gmail.com
+2025-04-27 11:49:01 INFO  [http-nio-8080-exec-2] b.blood_api.service.OtpService - OTP generated 631706
+2025-04-27 11:49:01 INFO  [http-nio-8080-exec-2] b.blood_api.service.OtpService - Adding Otp entitity in DB bloodfinders.blood_api.model.OtpEntity@37d0ee65
+2025-04-27 11:49:07 INFO  [http-nio-8080-exec-2] b.blood_api.service.OtpService - OTP sent successfully to djangomailabhi@gmail.com
+2025-04-27 11:49:29 INFO  [http-nio-8080-exec-3] b.blood_api.service.OtpService - Valid otp, creating JWT and sending to user
+2025-04-27 11:59:45 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m54s579ms).
+2025-04-27 12:07:05 INFO  [http-nio-8080-exec-4] b.b.c.RequestBloodController - Generating Otp to mail djangomailabhi@gmail.com
+2025-04-27 12:07:05 INFO  [http-nio-8080-exec-4] b.blood_api.service.OtpService - OTP generated 743748
+2025-04-27 12:07:05 INFO  [http-nio-8080-exec-4] b.blood_api.service.OtpService - Adding Otp entitity in DB bloodfinders.blood_api.model.OtpEntity@2b0e61e9
+2025-04-27 12:07:11 INFO  [http-nio-8080-exec-4] b.blood_api.service.OtpService - OTP sent successfully to djangomailabhi@gmail.com
+2025-04-27 12:07:31 INFO  [http-nio-8080-exec-5] b.blood_api.service.OtpService - Valid otp, creating JWT and sending to user
+2025-04-27 12:08:02 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 12:08:02 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-27 12:08:02 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-27 12:08:04 INFO  [main] b.blood_api.BloodApiApplication - Starting BloodApiApplication v0.0.1-SNAPSHOT using Java 21.0.6 with PID 9127 (/Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api/target/blood_api-0.0.1-SNAPSHOT.jar started by abhinayreddybellamkonda in /Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api)
+2025-04-27 12:08:04 INFO  [main] b.blood_api.BloodApiApplication - The following 1 profile is active: "dev"
+2025-04-27 12:08:05 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-27 12:08:05 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 4 JPA repository interfaces.
+2025-04-27 12:08:05 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-27 12:08:05 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 541 ms
+2025-04-27 12:08:05 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-27 12:08:05 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-27 12:08:05 INFO  [main] o.h.s.integration.SpatialService - HHH80000001: hibernate-spatial integration enabled : true
+2025-04-27 12:08:05 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-27 12:08:05 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-27 12:08:05 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-27 12:08:05 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 12:08:05 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-27 12:08:05 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 12:08:05 INFO  [main] org.hibernate.spatial - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 12:08:06 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-27 12:08:06 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 12:08:06 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-27 12:08:06 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 7f854531-460f-4fd8-b998-42a75e0a5d7f
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-04-27 12:08:06 INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1f2d0ca2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e353e1d, org.springframework.security.web.context.SecurityContextHolderFilter@3358805a, org.springframework.security.web.header.HeaderWriterFilter@2709e075, org.springframework.web.filter.CorsFilter@1a1c308b, org.springframework.security.web.authentication.logout.LogoutFilter@21e15093, bloodfinders.blood_api.jwt.JwtAuthFilter@227fc322, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@642b71d6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@93c66ef, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@d4dbb34, org.springframework.security.web.session.SessionManagementFilter@46f041cb, org.springframework.security.web.access.ExceptionTranslationFilter@6c120b00, org.springframework.security.web.access.intercept.AuthorizationFilter@452a32f2]
+2025-04-27 12:08:06 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-27 12:08:06 INFO  [main] b.blood_api.BloodApiApplication - Started BloodApiApplication in 2.007 seconds (process running for 2.214)
+2025-04-27 12:08:06 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 12:08:06 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-27 12:08:06 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-27 12:08:15 INFO  [main] b.blood_api.BloodApiApplicationTests - Starting BloodApiApplicationTests using Java 23.0.2 with PID 9156 (started by abhinayreddybellamkonda in /Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api)
+2025-04-27 12:08:15 INFO  [main] b.blood_api.BloodApiApplicationTests - The following 1 profile is active: "dev"
+2025-04-27 12:08:15 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-27 12:08:15 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 4 JPA repository interfaces.
+2025-04-27 12:08:15 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-27 12:08:15 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-27 12:08:15 INFO  [main] o.h.s.integration.SpatialService - HHH80000001: hibernate-spatial integration enabled : true
+2025-04-27 12:08:15 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-27 12:08:15 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-27 12:08:15 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-27 12:08:15 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 12:08:15 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-27 12:08:15 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 12:08:15 INFO  [main] org.hibernate.spatial - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 12:08:16 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-27 12:08:16 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 12:08:16 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-27 12:08:16 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: e449b1eb-64a3-4ac4-96cd-7bafc4b7ba2c
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-04-27 12:08:16 INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@157267db, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b8ac512, org.springframework.security.web.context.SecurityContextHolderFilter@7f5c4ff8, org.springframework.security.web.header.HeaderWriterFilter@13288174, org.springframework.web.filter.CorsFilter@58922a00, org.springframework.security.web.authentication.logout.LogoutFilter@5f93ec02, bloodfinders.blood_api.jwt.JwtAuthFilter@38f3dbbf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@431f8830, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@75bbe39d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69c335c4, org.springframework.security.web.session.SessionManagementFilter@5cbaafbd, org.springframework.security.web.access.ExceptionTranslationFilter@dffcf1, org.springframework.security.web.access.intercept.AuthorizationFilter@fe38d1e]
+2025-04-27 12:08:16 INFO  [main] b.blood_api.BloodApiApplicationTests - Started BloodApiApplicationTests in 1.434 seconds (process running for 1.767)
+2025-04-27 12:08:16 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 12:08:16 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-27 12:08:16 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-27 12:08:20 INFO  [main] b.blood_api.BloodApiApplication - Starting BloodApiApplication v0.0.1-SNAPSHOT using Java 21.0.6 with PID 9175 (/Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api/target/blood_api-0.0.1-SNAPSHOT.jar started by abhinayreddybellamkonda in /Users/abhinayreddybellamkonda/Desktop/BloodFinders/BloodFinders/blood_api)
+2025-04-27 12:08:20 INFO  [main] b.blood_api.BloodApiApplication - The following 1 profile is active: "dev"
+2025-04-27 12:08:20 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-27 12:08:20 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 4 JPA repository interfaces.
+2025-04-27 12:08:20 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-27 12:08:20 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-04-27 12:08:20 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-04-27 12:08:20 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-04-27 12:08:20 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 547 ms
+2025-04-27 12:08:20 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-27 12:08:20 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-04-27 12:08:20 INFO  [main] o.h.s.integration.SpatialService - HHH80000001: hibernate-spatial integration enabled : true
+2025-04-27 12:08:20 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-04-27 12:08:20 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-04-27 12:08:20 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-04-27 12:08:20 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 12:08:21 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-27 12:08:21 INFO  [main] org.hibernate.spatial - HHH80000003: hibernate-spatial adding type contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 12:08:21 INFO  [main] org.hibernate.spatial - HHH80000004: hibernate-spatial adding function contributions from : org.hibernate.spatial.dialect.postgis.PostgisDialectContributor
+2025-04-27 12:08:21 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-27 12:08:21 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 12:08:21 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-27 12:08:21 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: eead4f2e-1eb2-4079-9972-c5fbc5e94c74
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-04-27 12:08:21 INFO  [main] o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1a1c308b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@d4dbb34, org.springframework.security.web.context.SecurityContextHolderFilter@642b71d6, org.springframework.security.web.header.HeaderWriterFilter@4f9e9c21, org.springframework.web.filter.CorsFilter@7af2ee23, org.springframework.security.web.authentication.logout.LogoutFilter@21b3d356, bloodfinders.blood_api.jwt.JwtAuthFilter@227fc322, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7e916dc2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1a18e68a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5d10e2b6, org.springframework.security.web.session.SessionManagementFilter@493489dd, org.springframework.security.web.access.ExceptionTranslationFilter@2709e075, org.springframework.security.web.access.intercept.AuthorizationFilter@1f2d0ca2]
+2025-04-27 12:08:21 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2025-04-27 12:08:21 INFO  [main] b.blood_api.BloodApiApplication - Started BloodApiApplication in 2.009 seconds (process running for 2.245)
+2025-04-27 12:08:41 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-27 12:08:41 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-27 12:08:41 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-04-27 12:08:44 ERROR [http-nio-8080-exec-2] b.blood_api.service.UserService - Bearer token missing
+2025-04-27 12:08:44 ERROR [http-nio-8080-exec-2] b.blood_api.service.OtpService - No otp delivered for provided email djangomailabhi@gmail.com
+2025-04-27 12:28:09 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m18s888ms).
+2025-04-27 12:29:27 ERROR [http-nio-8080-exec-3] b.blood_api.service.UserService - Bearer token missing
+2025-04-27 12:29:27 INFO  [http-nio-8080-exec-3] b.b.c.RequestBloodController - Generating Otp to mail djangomailabhi@gmail.com
+2025-04-27 12:29:27 INFO  [http-nio-8080-exec-3] b.blood_api.service.OtpService - OTP generated 972250
+2025-04-27 12:29:27 INFO  [http-nio-8080-exec-3] b.blood_api.service.OtpService - Adding Otp entitity in DB bloodfinders.blood_api.model.OtpEntity@41cdeb0a
+2025-04-27 12:29:33 INFO  [http-nio-8080-exec-3] b.blood_api.service.OtpService - OTP sent successfully to djangomailabhi@gmail.com
+2025-04-27 12:29:38 WARN  [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m28s658ms).
+2025-04-27 12:30:01 ERROR [http-nio-8080-exec-4] b.blood_api.service.UserService - Bearer token missing
+2025-04-27 12:30:01 INFO  [http-nio-8080-exec-4] b.blood_api.service.OtpService - Invalid Otp
+2025-04-27 12:30:18 ERROR [http-nio-8080-exec-5] b.blood_api.service.UserService - Bearer token missing
+2025-04-27 12:30:18 INFO  [http-nio-8080-exec-5] b.blood_api.service.OtpService - Invalid Otp
+2025-04-27 12:30:37 ERROR [http-nio-8080-exec-6] b.blood_api.service.UserService - Bearer token missing
+2025-04-27 12:30:37 INFO  [http-nio-8080-exec-6] b.blood_api.service.OtpService - Valid otp, creating JWT and sending to user
+2025-04-27 12:33:07 ERROR [http-nio-8080-exec-8] b.blood_api.service.UserService - Bearer token missing
+2025-04-27 12:33:07 ERROR [http-nio-8080-exec-8] b.blood_api.service.OtpService - No otp delivered for provided email djangomailabhi@gmail.com
+2025-04-27 12:49:01 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-27 12:49:01 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-27 12:49:01 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

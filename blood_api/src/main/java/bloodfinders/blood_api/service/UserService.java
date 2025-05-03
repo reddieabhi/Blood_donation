@@ -11,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.Point;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -23,11 +25,13 @@ public class UserService {
     private final UserRepository userRepository;
     private final GeometryFactory geometryFactory = new GeometryFactory();
     private final JwtUtil jwtUtil;
+    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
     public RequestResponse<UserRegisterLoginDTO> registerUser(UserRegisterDTO userRegisterDTO) {
         User user = new User();
         copyToUser(userRegisterDTO, user);
         user = userRepository.save(user);
+        logger.info("Added user entity in DB");
         long EXPIRATION_TIME = 1000L * 60 * 60 * 24 * 365;
         String JwtToken = jwtUtil.generateToken(user.getUid(), EXPIRATION_TIME);
         return new RequestResponse<>(202, "User Registered successfully", new UserRegisterLoginDTO(user.getUid(),JwtToken));
@@ -81,6 +85,7 @@ public class UserService {
 //    }
 
     private void copyToUser(UserRegisterDTO dto, User user) {
+        logger.debug("Creating user entity from User Register DTO");
         user.setUserName(dto.getUserName());
         user.setPassword(dto.getPassword());
         user.setName(dto.getName());
@@ -95,6 +100,7 @@ public class UserService {
         // location can also be set here if needed
         Point location = geometryFactory.createPoint(new Coordinate(dto.getLongitude(), dto.getLatitude()));
         user.setLocation(location);
+        logger.info("Created user entity from User DTO");
 
     }
 }

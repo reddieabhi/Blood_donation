@@ -4,8 +4,11 @@ import bloodfinders.blood_api.model.response.RequestResponse;
 import bloodfinders.blood_api.model.DTO.UserInfoDTO;
 import bloodfinders.blood_api.model.request.UserRegisterDTO;
 import bloodfinders.blood_api.model.response.UserRegisterLoginDTO;
+import bloodfinders.blood_api.service.OtpService;
 import bloodfinders.blood_api.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -15,9 +18,12 @@ import java.util.UUID;
 public class UserController {
 
     private final UserService userService;
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
+
 
     @PostMapping("/register")
     public RequestResponse<UserRegisterLoginDTO> registerUser(@RequestBody UserRegisterDTO userRegisterDTO) {
+        logger.info("Registering new user {}", userRegisterDTO);
         return  userService.registerUser(userRegisterDTO);
     }
 

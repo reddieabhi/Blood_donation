@@ -13,16 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.lang.module.Configuration;
 
 @RestController
-@RequestMapping("/user")
-public class LoginController {
+    @RequestMapping("/user")
+    public class LoginController {
 
-    private LoginService loginService;
+        private LoginService loginService;
 
-    @PostMapping("/login")
-    public RequestResponse<ApiResponse> userLogin(LoginRequest loginRequest){
-        if (loginRequest.getEmail() == null || loginRequest.getPassword() == null || loginRequest.getEmail().isEmpty() || loginRequest.getPassword().isEmpty()){
-            return new RequestResponse<>(Constants.STATUS_INVALID, Constants.EMAIL_PASSWORD_EMPTY, null);
-        }
+        @PostMapping("/login")
+        public RequestResponse<ApiResponse> userLogin(LoginRequest loginRequest){
+            if (loginRequest.getEmail() == null || loginRequest.getPassword() == null || loginRequest.getEmail().isEmpty() || loginRequest.getPassword().isEmpty()){
+                return new RequestResponse<>(Constants.STATUS_INVALID, Constants.EMAIL_PASSWORD_EMPTY, null);
+            }
 
         return loginService.userLogin(loginRequest);
     }

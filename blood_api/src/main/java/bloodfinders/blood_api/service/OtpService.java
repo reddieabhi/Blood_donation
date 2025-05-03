@@ -43,30 +43,33 @@ public class OtpService {
 
         ApiResponse otpResponse = new ApiResponse();
         if (find){
+            logger.info("Find is true, hence assuming otp generating for a password reset and searching for user");
             Optional<User> userOpt = userRepository.findByEmail(email);
 
             if (userOpt.isEmpty()){
                 otpResponse.setMessage(email + "not found");
                 otpResponse.setStatusCode(Constants.STATUS_NOT_FOUND);
+                logger.error("No user found with provided email");
                 return otpResponse;
             }
         }
+
 
         String otp = String.format("%0" + Constants.OTP_LENGTH + "d", new Random().nextInt((int) Math.pow(10, Constants.OTP_LENGTH)));
         logger.info("OTP generated {}", otp);
         LocalDateTime expiryTime = LocalDateTime.now().plusMinutes(Constants.OTP_EXPIRY_MINUTES);
 
-        OtpEntity otpEntity = otpRepository.findByEmail(email); // <- find existing
+        OtpEntity otpEntity = otpRepository.findByEmail(email); //
 
         if (otpEntity != null) {
             otpEntity.setOtpCode(otp);
             otpEntity.setExpiresAt(expiryTime);
-            otpEntity.setVerified(false);  // maybe reset verified if needed
+            otpEntity.setVerified(false);
         } else {
-
             otpEntity = otpEntityMaker(email, otp, expiryTime);
         }
 
+        logger.info("Adding Otp entitity in DB {}", otpEntity);
         otpRepository.save(otpEntity);
 
 
@@ -84,6 +87,7 @@ public class OtpService {
 
         otpResponse.setMessage("OTP sent successfully to " + email);
         otpResponse.setStatusCode(Constants.STATUS_OK);
+        logger.info("OTP sent successfully to {}", email);
 
         return otpResponse;
     }
@@ -92,6 +96,8 @@ public class OtpService {
     public ApiResponse validateOtp(String email, String otpCode) {
         Optional<OtpEntity> otpOpt = otpRepository.findByEmailAndVerifiedFalse(email);
         ApiResponse response = new ApiResponse();
+
+
 
         if (otpOpt.isPresent()) {
             OtpEntity otpVerification = otpOpt.get();
@@ -105,6 +111,7 @@ public class OtpService {
             }
 
             if (otpVerification.getOtpCode().equals(otpCode)) {
+                logger.info("Valid otp, creating JWT and sending to user");
                 otpVerification.setVerified(true);
                 otpRepository.save(otpVerification);
                 long EXPIRATION_TIME = 1000L * 60 * 5;
@@ -114,14 +121,21 @@ public class OtpService {
                 response.setPayload("Success");
                 response.setJwtToken(JwtToken);
                 return response;
+            } else {
+                logger.info("Invalid Otp");
+                response.setMessage(Constants.INVALID_OTP);
+                response.setStatusCode(Constants.STATUS_UNAUTHORIZED);
+                response.setPayload(null);
+                response.setJwtToken(null);
+                return response;
             }
         }
 
-        response.setMessage(Constants.INVALID_OTP);
-        response.setStatusCode(Constants.STATUS_UNAUTHORIZED);
-        response.setPayload(null);
-        response.setJwtToken(null);
+        logger.error("No otp delivered for provided email {}", email);
+        response.setStatusCode(Constants.STATUS_NOT_FOUND);
+        response.setMessage("No otp delivered for provided email" + email);
         return response;
+
     }
 
     public OtpEntity otpEntityMaker(String email, String otp, LocalDateTime expTime){

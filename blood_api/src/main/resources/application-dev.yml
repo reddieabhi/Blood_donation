@@ -20,7 +20,7 @@ logging:
     com.yourpackage: DEBUG
     com.zaxxer.hikari.pool.HikariPool: WARN
     org.springframework.web: INFO
-    org.hibernate.SQL: DEBUG
+    org.hibernate.SQL: WARN
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 
   pattern:

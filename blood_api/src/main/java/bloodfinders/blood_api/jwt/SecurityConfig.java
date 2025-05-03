@@ -23,7 +23,11 @@ public class SecurityConfig {
         http.csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("/users/register").permitAll();
+                    auth.requestMatchers(
+                            "/otp/generate",
+                            "/otp/verify",
+                            "/user/login"
+                    ).permitAll();
                     if (jwtAuthEnabled) {
                         auth.anyRequest().authenticated();
                     } else {

@@ -26,7 +26,7 @@ public class Constants {
     public static final int STATUS_INVALID = 400;
 
     //users
-    public static final String USER_FOR_VERIFIED_OTP_JWT = "OTP_VERIFIED";
+    public static final String USER_FOR_VERIFIED_OTP_JWT = "123e4567-e89b-12d3-a456-426614174000";
 
     //Login
     public static final String EMAIL_PASSWORD_EMPTY = "Email or password cannot be empty";
@@ -36,7 +36,7 @@ public class Constants {
 
     //Expire timings
     public static final long EXPIRATION_TIME = 1000L * 60 * 60 * 24 * 365;
-    public static final long SHORT_EXPIRE_TIME = 1000L * 60;
+    public static final long SHORT_EXPIRE_TIME = 1000L * 60 * 5;
 
 
     //Passwords

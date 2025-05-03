@@ -40,6 +40,7 @@ public class JwtUtil {
                     .setSigningKey(Keys.hmacShaKeyFor(SECRET_KEY.getBytes()))
                     .build()
                     .parseClaimsJws(token);
+
             return true;
         } catch (JwtException e) {
             return false;
