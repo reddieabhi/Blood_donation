@@ -1,4 +1,6 @@
 package bloodfinders.blood_api.constants;
+import org.springframework.beans.factory.annotation.Value;
+
 
 public class Constants {
 
@@ -26,7 +28,8 @@ public class Constants {
     public static final int STATUS_INVALID = 400;
 
     //users
-    public static final String USER_FOR_VERIFIED_OTP_JWT = "123e4567-e89b-12d3-a456-426614174000";
+    @Value("${app.default-user-id}")
+    public static String USER_FOR_VERIFIED_OTP_JWT;
 
     //Login
     public static final String EMAIL_PASSWORD_EMPTY = "Email or password cannot be empty";

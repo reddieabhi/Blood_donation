@@ -9,11 +9,20 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Value;
 
+import java.util.List;
+
 @Configuration
 @RequiredArgsConstructor
 public class SecurityConfig {
 
     private final JwtAuthFilter jwtAuthFilter;
+
+
+    public static final List<String> PUBLIC_ENDPOINTS = List.of(
+            "/otp/generate",
+            "/otp/verify",
+            "/user/login"
+    );
 
     @Value("${jwt.auth.enabled:true}")
     private boolean jwtAuthEnabled;
@@ -23,11 +32,7 @@ public class SecurityConfig {
         http.csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers(
-                            "/otp/generate",
-                            "/otp/verify",
-                            "/user/login"
-                    ).permitAll();
+                    auth.requestMatchers(PUBLIC_ENDPOINTS.toArray(new String[0])).permitAll();
                     if (jwtAuthEnabled) {
                         auth.anyRequest().authenticated();
                     } else {

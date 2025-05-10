@@ -22,6 +22,8 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.UUID;
 
+import static bloodfinders.blood_api.jwt.SecurityConfig.PUBLIC_ENDPOINTS;
+
 @Component
 @RequiredArgsConstructor
 public class JwtAuthFilter extends OncePerRequestFilter {
@@ -38,15 +40,16 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
         final String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
 
+
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            logger.error("Bearer token missing");
+            logger.warn("JWT token missing or invalid format for URI: {}", request.getRequestURI());
             filterChain.doFilter(request, response);
             return;
         }
 
         final String token = authHeader.substring(7);
         if (!jwtUtil.isTokenValid(token)) {
-            logger.info("Not a valid token");
+            logger.warn("JWT token validation failed for token: {}", token);
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             return;
         }
@@ -54,10 +57,11 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         UUID userId = jwtUtil.extractUserId(token);
         User user = userRepository.findById(userId).orElse(null);
         if (user == null) {
-            logger.info("Could not find user information from JWT");
+            logger.warn("Could not find user information from JWT");
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             return;
         }
+
 
         UsernamePasswordAuthenticationToken auth =
                 new UsernamePasswordAuthenticationToken(user, null, Collections.emptyList());
@@ -69,8 +73,11 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
-        // Bypass the filter for /users/register
         String path = request.getServletPath();
-        return path.equals("/users/register");
+        boolean shouldSkip = PUBLIC_ENDPOINTS.contains(path);
+        if (shouldSkip) {
+            logger.info("Skipping JWT filter for public path: {}", path);
+        }
+        return shouldSkip;
     }
 }

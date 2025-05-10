@@ -7,11 +7,13 @@ import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.UUID;
+import org.springframework.beans.factory.annotation.Value;
 
 @Component
 public class JwtUtil {
 
-    private final String SECRET_KEY = "your_super_secret_key_should_be_long_enough";
+    @Value("${security.jwt.secret-key}")
+    private String SECRET_KEY;
 
 
 

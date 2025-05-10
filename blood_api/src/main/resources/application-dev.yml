@@ -1,9 +1,9 @@
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/blood_donation
-    username: postgres
-    password: Blood_donation@123
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -12,6 +12,11 @@ spring:
       hibernate:
         format_sql: true
     show-sql: true
+
+security:
+  jwt:
+    secret-key: ${SECRET_KEY:default_dev_secret_key}
+authEnabled : true
 
 
 logging:
@@ -42,9 +47,10 @@ logging:
 
 app:
   search-radius-km: 20
+  default-user-id: 123e4567-e89b-12d3-a456-426614174000
 
 
-authEnabled : true
+
 
 
 # logging
