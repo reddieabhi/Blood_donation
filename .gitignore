@@ -2,3 +2,4 @@
 .DS_Store
 .idea
 
+ blood_api/src/main/resources/application-dev.yml

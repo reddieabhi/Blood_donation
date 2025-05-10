@@ -1,9 +1,13 @@
 package bloodfinders.blood_api.jwt;
 
+import bloodfinders.blood_api.service.UserService;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
 import org.hibernate.annotations.Comment;
 import org.springframework.stereotype.Component;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Date;
 import java.util.UUID;
@@ -14,6 +18,8 @@ public class JwtUtil {
 
     @Value("${security.jwt.secret-key}")
     private String SECRET_KEY;
+
+    private static final Logger logger = LoggerFactory.getLogger(JwtUtil.class);
 
 
 

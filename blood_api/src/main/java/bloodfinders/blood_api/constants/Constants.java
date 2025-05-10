@@ -28,8 +28,8 @@ public class Constants {
     public static final int STATUS_INVALID = 400;
 
     //users
-    @Value("${app.default-user-id}")
-    public static String USER_FOR_VERIFIED_OTP_JWT;
+//    @Value("${app.default-user-id}")
+//    public static String USER_FOR_VERIFIED_OTP_JWT;
 
     //Login
     public static final String EMAIL_PASSWORD_EMPTY = "Email or password cannot be empty";

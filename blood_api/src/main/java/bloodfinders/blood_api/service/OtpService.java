@@ -11,6 +11,7 @@ import bloodfinders.blood_api.repository.UserRepository;
 import jakarta.mail.MessagingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,8 @@ public class OtpService {
     private final EmailService emailService;
     private static final Logger logger = LoggerFactory.getLogger(OtpService.class);
     private final JwtUtil jwtUtil;
-
+    @Value("${app.default-user-id}")
+    private String defaultUserId;
 
     public OtpService(OtpRepository otpRepository, UserRepository userRepository, JwtUtil jwtUtil) {
         this.otpRepository = otpRepository;
@@ -117,7 +119,8 @@ public class OtpService {
                 otpVerification.setVerified(true);
                 otpRepository.save(otpVerification);
                 long EXPIRATION_TIME = 1000L * 60 * 5;
-                String JwtToken = jwtUtil.generateToken(UUID.fromString(Constants.USER_FOR_VERIFIED_OTP_JWT), EXPIRATION_TIME);
+                logger.info("User from constants: {}", defaultUserId);
+                String JwtToken = jwtUtil.generateToken(UUID.fromString(defaultUserId), EXPIRATION_TIME);
                 response.setMessage(Constants.OTP_VALID);
                 response.setStatusCode(Constants.STATUS_OK);
                 response.setPayload("Success");
