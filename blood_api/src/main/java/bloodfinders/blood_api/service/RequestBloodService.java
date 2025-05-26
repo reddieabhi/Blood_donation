@@ -10,10 +10,7 @@ import bloodfinders.blood_api.repository.EventRepository;
 import bloodfinders.blood_api.fcm.FCMNotifications;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Predicate;
-import jakarta.persistence.criteria.Root;
+import jakarta.persistence.criteria.*;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.Point;
@@ -146,6 +143,53 @@ public class RequestBloodService {
         }
         Event event = eventOpt.get();
         EventDetailsDTO eventDetailsDTO = getEventDetailsDTOfromEvent(event);
+
+
         return ResponseEntity.status(HttpStatus.OK).header("Message", "Found event").body(eventDetailsDTO);
+    }
+
+    public ResponseEntity<List<EventDetailsDTO>> getNearEvents(double lat, double longitude) {
+        List<EventDetailsDTO> eventDetailsDTOS = findNearbyEvents(lat, longitude);
+
+        if (eventDetailsDTOS.isEmpty()){
+            logger.info("No events found");
+            return  ResponseEntity.status(HttpStatus.NOT_FOUND).body(eventDetailsDTOS);
+        }
+        logger.info("Events :{} ", eventDetailsDTOS.toString());
+        return ResponseEntity.status(HttpStatus.OK).body(eventDetailsDTOS);
+    }
+
+    public List<EventDetailsDTO> findNearbyEvents(double lat, double lng) {
+        logger.debug("Started finding nearby events. Lat: {}, Lng: {}", lat, lng);
+
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<EventDetailsDTO> query = cb.createQuery(EventDetailsDTO.class);
+        Root<Event> event = query.from(Event.class);
+        Join<Event, User> user = event.join("user");
+
+        Predicate withinDistance = cb.isTrue(cb.function("ST_DWithin", Boolean.class,
+                event.get("location"),
+                cb.function("ST_SetSRID", Object.class,
+                        cb.function("ST_MakePoint", Object.class, cb.literal(lng), cb.literal(lat)),
+                        cb.literal(4326)),
+                cb.literal(searchRadiusKm * 1000)
+        ));
+
+        Expression<Double> latitude = cb.function("ST_Y", Double.class, event.get("location"));
+        Expression<Double> longitude = cb.function("ST_X", Double.class, event.get("location"));
+
+        query.select(cb.construct(EventDetailsDTO.class,
+                user,
+                event.get("eid"),
+                event.get("bloodGroup"),
+                latitude,
+                longitude,
+                event.get("place"),
+                event.get("currentStatus")
+        )).where(withinDistance);
+
+        logger.info("Query constructed for nearby events with location filter.");
+
+        return entityManager.createQuery(query).getResultList();
     }
 }

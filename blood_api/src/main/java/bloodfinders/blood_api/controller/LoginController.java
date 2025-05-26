@@ -9,8 +9,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.module.Configuration;
 
@@ -18,12 +21,18 @@ import java.lang.module.Configuration;
     @RequestMapping("/user")
     public class LoginController {
 
-        private LoginService loginService;
+        private final LoginService loginService;
+
+        private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
+
+        public LoginController(LoginService loginService){
+            this.loginService = loginService;
+        }
 
         @PostMapping("/login")
-        public ResponseEntity<ApiResponse> userLogin(LoginRequest loginRequest){
+        public ResponseEntity<ApiResponse> userLogin(@RequestBody  LoginRequest loginRequest){
             if (loginRequest.getEmail() == null || loginRequest.getPassword() == null || loginRequest.getEmail().isEmpty() || loginRequest.getPassword().isEmpty()){
-//                return new RequestResponse<>(Constants.STATUS_INVALID, Constants.EMAIL_PASSWORD_EMPTY, null);
+                logger.info("Login request received for email {}", loginRequest.getEmail());
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).header("Message", Constants.EMAIL_PASSWORD_EMPTY).body(null);
             }
 
@@ -31,7 +40,9 @@ import java.lang.module.Configuration;
     }
 
     @PostMapping("/reset-password")
-    public ResponseEntity<ApiResponse> resetPassword(LoginRequest loginRequest){
+    public ResponseEntity<ApiResponse> resetPassword(@RequestBody LoginRequest loginRequest){
+
+        logger.info("Reset password request received for email {}", loginRequest.getEmail());
         return loginService.passwordReset(loginRequest);
     }
 

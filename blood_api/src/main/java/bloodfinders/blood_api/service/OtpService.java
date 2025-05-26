@@ -17,6 +17,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 import java.util.UUID;
@@ -32,14 +33,16 @@ public class OtpService {
     @Value("${app.default-user-id}")
     private String defaultUserId;
 
-    public OtpService(OtpRepository otpRepository, UserRepository userRepository, JwtUtil jwtUtil) {
+    public OtpService(OtpRepository otpRepository, UserRepository userRepository, JwtUtil jwtUtil, EmailService emailService) {
         this.otpRepository = otpRepository;
         this.userRepository = userRepository;
         this.jwtUtil = jwtUtil;
 
         String smtpHost = Constants.SMTP_HOST;
         int smtpPort = Constants.SMTP_PORT;
-        this.emailService = new EmailService(smtpHost, smtpPort);
+//        this.emailService = new EmailService(smtpHost, smtpPort);
+        this.emailService = emailService;
+
     }
 
 
@@ -81,7 +84,7 @@ public class OtpService {
         String body = Constants.OTP_EMAIL_BODY_PREFIX + otp;
 
         try {
-            emailService.sendEmail(email, subject, body);
+            emailService.sendEmail(List.of(email), subject, body);
         } catch (MessagingException e) {
             logger.error("Failed to send OTP email to {}", email, e);
             otpResponse.setMessage("Failed to send OTP email. Please try again later.");

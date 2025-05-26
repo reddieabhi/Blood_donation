@@ -17,23 +17,34 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Service
 public class LoginService {
 
-    private UserRepository userRepository;
-    private JwtUtil jwtUtil;
+    private final UserRepository userRepository;
+    private final JwtUtil jwtUtil;
+
+    private static final Logger logger = LoggerFactory.getLogger(LoginService.class);
+
+    public LoginService(UserRepository userRepository, JwtUtil jwtUtil) {
+        this.userRepository = userRepository;
+        this.jwtUtil = jwtUtil;
+    }
 
     public ResponseEntity<ApiResponse> userLogin(LoginRequest loginRequest) {
         Optional<User> useropt = userRepository.findByEmail(loginRequest.getEmail());
 
         if (useropt.isEmpty()){
+            logger.info("User not found with provided email {}",loginRequest.getEmail());
             return ResponseEntity.status(HttpStatus.NOT_FOUND).header("Message", Constants.USER_NOT_FOUND).body(null);
         }
 
         User user = useropt.get();
-
+        logger.info("User found in db {}", user.getUserName());
         if (!user.getPassword().equals(loginRequest.getPassword())) {
-//            return new RequestResponse<>(Constants.STATUS_INVALID, Constants.INVALID_PASSWORD, null);
+            logger.warn("Invalid password for email {}", loginRequest.getEmail());
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).header("Message", Constants.INVALID_PASSWORD).body(null);
 
         }
@@ -45,8 +56,9 @@ public class LoginService {
         apiResponse.setStatusCode(Constants.STATUS_OK);
         apiResponse.setPayload("Login Successful");
         apiResponse.setJwtToken(jwtToken);
+        logger.info("Login success for email {}", loginRequest.getEmail());
+        logger.info("Created jwt for email {}: jwt : {}", loginRequest.getEmail(), jwtToken);
 
-//        return new RequestResponse<>(Constants.STATUS_OK, Constants.LOGIN_SUCCESS, apiResponse);
         return ResponseEntity.status(HttpStatus.OK).header("Message", "Login Success").body(apiResponse);
     }
 
@@ -58,7 +70,7 @@ public class LoginService {
         apiResponse.setMessage(Constants.UNABLE_TO_CHANGE_PASSWORD);
 
         if (loginRequest.getEmail() == null || loginRequest.getPassword() == null || loginRequest.getEmail().isEmpty() || loginRequest.getPassword().isEmpty()){
-//            return apiResponse;
+            logger.info("Email or password cannot be empty");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).header("Message", "Email or password cannot be empty").body(apiResponse);
         }
 
@@ -67,6 +79,7 @@ public class LoginService {
         if (useropt.isEmpty()){
             apiResponse.setStatusCode(Constants.STATUS_NOT_FOUND);
             apiResponse.setMessage("No user found");
+            logger.info("No user found for email {}to update password", loginRequest.getEmail());
             return ResponseEntity.status(HttpStatus.NOT_FOUND).header("Message", "User not found").body(apiResponse);
         }
 
@@ -75,6 +88,8 @@ public class LoginService {
         userRepository.save(user);
         apiResponse.setStatusCode(Constants.STATUS_OK);
         apiResponse.setMessage(Constants.PASSWORD_CHANGE_SUCCESSFULL);
+        apiResponse.setPayload(Constants.PASSWORD_CHANGE_SUCCESSFULL);
+        logger.info("Password changed successfully for email {}", loginRequest.getEmail());
 
         return ResponseEntity.status(HttpStatus.OK).header("Message", Constants.PASSWORD_CHANGE_SUCCESSFULL).body(apiResponse);
     }

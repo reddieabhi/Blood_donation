@@ -6,26 +6,42 @@ import jakarta.mail.internet.*;
 import java.util.List;
 import java.util.Properties;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.PostConstruct;
+
+
+@Service
 public class EmailService {
 
-    private final String username;
-    private final String password;
-    private final Properties props;
+    @Value("${email.user}")
+    private String username;
 
-    public EmailService(String smtpHost, int smtpPort) {
-        this.username = System.getenv("EMAIL_USER");
-        this.password = System.getenv("EMAIL_PASS");
+    @Value("${email.pass}")
+    private String password;
 
+    @Value("${email.smtp.host}")
+    private String smtpHost;
+
+    @Value("${email.smtp.port}")
+    private int smtpPort;
+
+    private final Properties props = new Properties();
+
+    @PostConstruct
+    public void init() {
         if (username == null || password == null) {
-            throw new IllegalStateException("Environment variables EMAIL_USER and EMAIL_PASS must be set.");
+            throw new IllegalStateException("Email credentials must be set in application-dev.yml");
         }
 
-        props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.host", smtpHost);
         props.put("mail.smtp.port", String.valueOf(smtpPort));
     }
+
+
 
 
     public void sendEmail(String to, String subject, String body) throws MessagingException {
