@@ -2,6 +2,7 @@ import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:findmyblood/HomeScreen/homeScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -33,6 +34,8 @@ class _RegistrationscreenState extends State<Registrationscreen> {
   String? selectedBloodGroup;
   bool isEmailVerified = false;
   String? generatedOtp;
+
+  FlutterSecureStorage secureStorage = FlutterSecureStorage();
 
 
   final List<String> bloodGroups = [
@@ -249,6 +252,7 @@ class _RegistrationscreenState extends State<Registrationscreen> {
   Future<void> _completeRegistration(String jwtToken,String userId) async {
     final locationService = LocationService();
     final location = await locationService.getCurrentLocation();
+    final storedToken = await secureStorage.read(key: 'fcmToken');
 
     final uri = Uri.parse('https://javapaas-196791-0.cloudclusters.net/users/register');
 
@@ -265,7 +269,7 @@ class _RegistrationscreenState extends State<Registrationscreen> {
       "bloodGroup": selectedBloodGroup ?? "",
       "latitude": location["latitude"],
       "longitude": location["longitude"],
-      "pushToken": jwtToken,
+      "pushToken": storedToken,
     };
 
     try {
@@ -282,10 +286,12 @@ class _RegistrationscreenState extends State<Registrationscreen> {
       print('Response Body: ${response.body}');
 
       if (response.statusCode == 200) {
-
+        final responseData = json.decode(response.body);
         final prefs = await SharedPreferences.getInstance();
-        await prefs.setString('Token', jwtToken);
-        await prefs.setString('userId', userId);
+        final token = responseData['jwtToken'];
+        final UserId = responseData['userId'];
+        await prefs.setString('Token', token);
+        await prefs.setString('userId', UserId);
 
         showAwesomeSnackBar(context, 'Success', 'Registration successful!', ContentType.success);
 

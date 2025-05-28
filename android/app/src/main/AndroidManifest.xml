@@ -8,6 +8,7 @@
 
     <!-- Optional: For background location access (Android 10+ if needed) -->
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
     <application
         android:label="findmyblood"

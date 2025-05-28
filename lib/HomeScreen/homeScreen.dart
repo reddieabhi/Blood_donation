@@ -1,10 +1,12 @@
 import 'package:dotted_line/dotted_line.dart';
 import 'package:findmyblood/Donate%20blood/DonationScreen.dart';
+import 'package:findmyblood/Donate%20blood/serviceClassForGettingNearbyRequests.dart';
 import 'package:findmyblood/Personal%20profile/profileDetailsScreen.dart';
 import 'package:findmyblood/Request%20blood/requestDialog.dart';
 import 'package:findmyblood/onBoarding/loginScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -16,6 +18,40 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
+
+  late Future<List<BloodRequest>> _bloodRequests;
+
+  Position? _currentPosition;
+
+  @override
+  void initState() {
+    super.initState();
+    _initLocation();
+    _bloodRequests = BloodRequestService().fetchNearbyRequests();
+  }
+
+  Future<void> _initLocation() async {
+    bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      // Handle: Location service not enabled
+      return;
+    }
+
+    LocationPermission permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.deniedForever || permission == LocationPermission.denied) {
+        // Handle: Permission denied
+        return;
+      }
+    }
+
+    _currentPosition = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+    setState(() {});
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -130,7 +166,34 @@ class _HomescreenState extends State<Homescreen> {
 
                       ],
                     ),
-                  )
+                  ),
+                  SizedBox(height: 10,),
+                  Expanded(
+                    child: FutureBuilder<List<BloodRequest>>(
+                      future: _bloodRequests,
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.waiting) {
+                          return const Center(child: CircularProgressIndicator(color: Colors.red,));
+                        } else if (snapshot.hasError) {
+                          return Center(child: Text('Something went wrong 😢'));
+                        } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                          return Center(child: Text('No nearby requests found.'));
+                        }
+
+                        final requests = snapshot.data!;
+                        return ListView.separated(
+                          itemCount: requests.length,
+                          separatorBuilder: (_, __) => const SizedBox(height: 12),
+                          padding: const EdgeInsets.only(bottom: 16),
+                          itemBuilder: (context, index) {
+                            final req = requests[index];
+                            return _buildRequestTile(req);
+                          },
+                        );
+                      },
+                    ),
+                  ),
+
                 ],
               ),
             ),
@@ -139,6 +202,105 @@ class _HomescreenState extends State<Homescreen> {
       ),
     );
   }
+
+  Widget _buildRequestTile(BloodRequest request) {
+    double? distanceKm;
+
+    if (_currentPosition != null &&
+        request.latitude != null &&
+        request.longitude != null) {
+      distanceKm = Geolocator.distanceBetween(
+        _currentPosition!.latitude,
+        _currentPosition!.longitude,
+        request.latitude!,
+        request.longitude!,
+      ) /
+          1000; // meters to km
+    }
+
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black12,
+            blurRadius: 6,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(Icons.bloodtype, color: Colors.red[800]),
+              const SizedBox(width: 8),
+              Text(
+                request.bloodGroup,
+                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const Spacer(),
+              if (distanceKm != null)
+                Row(
+                  children: [
+                    const Icon(Icons.location_on, size: 18, color: Colors.black45),
+                    const SizedBox(width: 4),
+                    Text(
+                      '${distanceKm.toStringAsFixed(2)} km',
+                      style: const TextStyle(fontSize: 14, color: Colors.black87),
+                    ),
+                    const SizedBox(width: 8),
+                  ],
+                ),
+              // Status box
+              if (request.currentStatus != null)
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: Colors.green[600],
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Text(
+                    request.currentStatus!,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Row(
+            children: [
+              const Icon(Icons.person, size: 20, color: Colors.black54),
+              const SizedBox(width: 6),
+              Text(request.userName, style: const TextStyle(fontSize: 16)),
+            ],
+          ),
+          const SizedBox(height: 6),
+          Row(
+            children: [
+              const Icon(Icons.pin_drop, size: 20, color: Colors.black54),
+              const SizedBox(width: 6),
+              Expanded(
+                child: Text(
+                  request.place ?? 'No location info',
+                  style: const TextStyle(fontSize: 16),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
 
   Widget _buildHeroCard({
     required String title,
@@ -342,6 +504,7 @@ class _HomescreenState extends State<Homescreen> {
   Future<void> _logout(BuildContext context) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.clear();
+    print("prefs are cleared");
     Navigator.pushReplacement(context, CupertinoPageRoute(builder: (_) => Loginscreen()));
   }
 }

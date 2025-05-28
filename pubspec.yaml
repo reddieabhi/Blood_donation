@@ -41,6 +41,11 @@ dependencies:
   shared_preferences:
   awesome_snackbar_content:
   dotted_line:
+  firebase_core:
+  firebase_messaging:
+  flutter_local_notifications:
+  flutter_secure_storage:
+  permission_handler:
 
 dev_dependencies:
   flutter_test:

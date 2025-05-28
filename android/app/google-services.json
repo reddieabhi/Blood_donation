@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "832752125471",
+    "project_id": "findyourblood",
+    "storage_bucket": "findyourblood.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832752125471:android:bf162012fea571116d372a",
+        "android_client_info": {
+          "package_name": "com.findMyBlood.findmyblood"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnNgQYcwBbKwxC4OcXRYgBIUlN-EmioTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
