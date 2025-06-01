@@ -8,4 +8,7 @@ import java.util.UUID;
 
 public interface EventRepository extends JpaRepository <Event, UUID>{
     List<Event> findByEid(UUID eid);
+    List<Event> findAllByUserUid(UUID uid);
+    List<Event> findAllByUserUidAndCurrentStatus(UUID uid, String currentStatus);
+
 }

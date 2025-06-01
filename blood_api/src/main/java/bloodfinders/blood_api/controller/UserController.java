@@ -6,9 +6,12 @@ import bloodfinders.blood_api.model.request.UserRegisterDTO;
 import bloodfinders.blood_api.model.response.UserRegisterLoginDTO;
 import bloodfinders.blood_api.service.OtpService;
 import bloodfinders.blood_api.service.UserService;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -22,19 +25,29 @@ public class UserController {
 
 
     @PostMapping("/register")
-    public RequestResponse<UserRegisterLoginDTO> registerUser(@RequestBody UserRegisterDTO userRegisterDTO) {
+    public ResponseEntity<UserRegisterLoginDTO> registerUser(@RequestBody UserRegisterDTO userRegisterDTO) {
         logger.info("Registering new user {}", userRegisterDTO);
         return  userService.registerUser(userRegisterDTO);
     }
 
     @PatchMapping("/update")
-    public RequestResponse<UserInfoDTO> updateUser(@RequestBody UserRegisterDTO userRegisterDTO, @RequestBody UUID uid,
-                                        @RequestHeader("Authorization") String token) {
+    public ResponseEntity<UserInfoDTO> updateUser(@RequestBody UserRegisterDTO userRegisterDTO, @RequestParam UUID uuid) {
         if (userRegisterDTO.getPassword() != null && !userRegisterDTO.getPassword().isBlank()) {
-            return new RequestResponse<UserInfoDTO>(400, "Password not allowed to change here", null);
+//            return new RequestResponse<UserInfoDTO>(400, "Password not allowed to change here", null);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).header("message", "Password not allowed to change here").body(null);
         }
 
-        return userService.updateUser(uid,userRegisterDTO, token);
+        return userService.updateUser(uuid,userRegisterDTO);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<UserInfoDTO> getUser(@PathVariable String id){
+        if (id.isEmpty()){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).header("message", "User ID cannot be null").body(null);
+        }
+        logger.info("Get request for user id : {}", id);
+        return userService.getUser(id);
+
     }
 
 

@@ -13,8 +13,11 @@ import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.Point;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.UUID;
 
 
@@ -27,17 +30,24 @@ public class UserService {
     private final JwtUtil jwtUtil;
     private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
-    public RequestResponse<UserRegisterLoginDTO> registerUser(UserRegisterDTO userRegisterDTO) {
+    public ResponseEntity<UserRegisterLoginDTO> registerUser(UserRegisterDTO userRegisterDTO) {
         User user = new User();
         copyToUser(userRegisterDTO, user);
+        Optional<User> optionalUser = userRepository.findByEmail(userRegisterDTO.getEmail());
+
+        if (optionalUser.isPresent()){
+            logger.info("User with provided email already exists");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).header("message", "User exists with provided email, try login").body(null);
+        }
         user = userRepository.save(user);
         logger.info("Added user entity in DB");
         long EXPIRATION_TIME = 1000L * 60 * 60 * 24 * 365;
         String JwtToken = jwtUtil.generateToken(user.getUid(), EXPIRATION_TIME);
-        return new RequestResponse<>(202, "User Registered successfully", new UserRegisterLoginDTO(user.getUid(),JwtToken));
+//        return new RequestResponse<>(202, "User Registered successfully", new UserRegisterLoginDTO(user.getUid(),JwtToken));
+        return ResponseEntity.status(HttpStatus.OK).header("message", "User registration success").body(new UserRegisterLoginDTO(user.getUid(),JwtToken));
     }
 
-    public RequestResponse<UserInfoDTO> updateUser(UUID uid, UserRegisterDTO dto, String token) {
+    public ResponseEntity<UserInfoDTO> updateUser(UUID uid, UserRegisterDTO dto) {
             User user = userRepository.findById(uid)
                     .orElseThrow(() -> new RuntimeException("User not found"));
 
@@ -60,8 +70,8 @@ public class UserService {
 
              userRepository.save(user);
 
-            return new RequestResponse<>(200, "User updated successfully", new UserInfoDTO(user));
-
+//            return new RequestResponse<>(200, "User updated successfully", new UserInfoDTO(user));
+            return ResponseEntity.status(HttpStatus.OK).header("message", "User updated successfully").body(new UserInfoDTO(user));
         }
 
 
@@ -101,6 +111,22 @@ public class UserService {
         Point location = geometryFactory.createPoint(new Coordinate(dto.getLongitude(), dto.getLatitude()));
         user.setLocation(location);
         logger.info("Created user entity from User DTO");
+
+    }
+
+    public ResponseEntity<UserInfoDTO> getUser(String id) {
+        UUID uid = UUID.fromString(id);
+
+        Optional<User> optuser = userRepository.findById(uid);
+        if (optuser.isEmpty()){
+            logger.info("No user found with the id {}", uid);
+            return  ResponseEntity.status(HttpStatus.NOT_FOUND).header("message", "No user found").body(null);
+        }
+
+        User user = optuser.get();
+        UserInfoDTO userInfoDTO = new UserInfoDTO(user);
+        logger.info("User found to user id : {}, {}", id, userInfoDTO);
+        return ResponseEntity.status(HttpStatus.OK).header("message", "Used found").body(userInfoDTO);
 
     }
 }

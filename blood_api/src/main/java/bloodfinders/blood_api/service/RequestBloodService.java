@@ -22,6 +22,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -106,7 +107,7 @@ public class RequestBloodService {
         Predicate withinDistance = cb.isTrue(cb.function("ST_DWithin", Boolean.class,
                 user.get("location"), cb.function("ST_SetSRID", Object.class,
                         cb.function("ST_MakePoint", Object.class, cb.literal(lng), cb.literal(lat)), cb.literal(4326)),
-                cb.literal(searchRadiusKm * 1000)
+                cb.literal(searchRadiusKm)
         ));
 
         logger.debug("Distance condition created using ST_DWithin for coordinates ({}, {}) with radius {} meters", lng, lat, searchRadiusKm * 1000);
@@ -172,11 +173,25 @@ public class RequestBloodService {
                 cb.function("ST_SetSRID", Object.class,
                         cb.function("ST_MakePoint", Object.class, cb.literal(lng), cb.literal(lat)),
                         cb.literal(4326)),
-                cb.literal(searchRadiusKm * 1000)
+                cb.literal(searchRadiusKm)
         ));
 
         Expression<Double> latitude = cb.function("ST_Y", Double.class, event.get("location"));
         Expression<Double> longitude = cb.function("ST_X", Double.class, event.get("location"));
+
+        Predicate statusActive = cb.equal(event.get("currentStatus"), "ACTIVE");
+
+        Predicate combined = cb.and(withinDistance, statusActive);
+
+//        query.select(cb.construct(EventDetailsDTO.class,
+//                user,
+//                event.get("eid"),
+//                event.get("bloodGroup"),
+//                latitude,
+//                longitude,
+//                event.get("place"),
+//                event.get("currentStatus")
+//        )).where(withinDistance);
 
         query.select(cb.construct(EventDetailsDTO.class,
                 user,
@@ -186,10 +201,33 @@ public class RequestBloodService {
                 longitude,
                 event.get("place"),
                 event.get("currentStatus")
-        )).where(withinDistance);
-
+        )).where(combined);
         logger.info("Query constructed for nearby events with location filter.");
 
         return entityManager.createQuery(query).getResultList();
+    }
+
+    public ResponseEntity<List<EventDetailsDTO>> getMyEvents(UUID id) {
+        List<Event> events = eventRepository.findAllByUserUid(id);
+
+        List<EventDetailsDTO> eventDtoList = new ArrayList<>();
+        for (Event event : events) {
+            eventDtoList.add(getEventDetailsDTOfromEvent(event));
+        }
+
+        return ResponseEntity.status(HttpStatus.OK).body(eventDtoList);
+
+    }
+
+    public ResponseEntity<List<EventDetailsDTO>> getMyActiveEvents(UUID id) {
+        List<Event> events = eventRepository.findAllByUserUidAndCurrentStatus(id, Constants.EVENT_STATUS_CREATED);
+
+        List<EventDetailsDTO> eventDtoList = new ArrayList<>();
+        for (Event event : events) {
+            eventDtoList.add(getEventDetailsDTOfromEvent(event));
+        }
+
+        return ResponseEntity.status(HttpStatus.OK).body(eventDtoList);
+
     }
 }

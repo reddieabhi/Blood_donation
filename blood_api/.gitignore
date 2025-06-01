@@ -4,6 +4,8 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 src/main/resources/bloodfinders_firebase_config.json
+src/main/resources/findyourblood-firebase-adminsdk-fbsvc-4420250ec9.json
+src/main/resources/application-dev.yml
 
 ### STS ###
 .apt_generated

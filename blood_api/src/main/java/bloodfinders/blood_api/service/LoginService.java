@@ -56,6 +56,7 @@ public class LoginService {
         apiResponse.setStatusCode(Constants.STATUS_OK);
         apiResponse.setPayload("Login Successful");
         apiResponse.setJwtToken(jwtToken);
+        apiResponse.setUuid(user.getUid());
         logger.info("Login success for email {}", loginRequest.getEmail());
         logger.info("Created jwt for email {}: jwt : {}", loginRequest.getEmail(), jwtToken);
 

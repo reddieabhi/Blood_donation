@@ -50,4 +50,15 @@ public class RequestBloodController {
         return requestBloodService.getNearEvents(lat, longitude);
     }
 
+    @GetMapping("/get-my-events/{id}")
+    public ResponseEntity<List<EventDetailsDTO>> getMyEvents(@PathVariable UUID id){
+        return requestBloodService.getMyEvents(id);
+    }
+
+    @GetMapping("/get-my-active-events/{id}")
+    public ResponseEntity<List<EventDetailsDTO>> getMyActiveEvents(@PathVariable UUID id){
+        return requestBloodService.getMyActiveEvents(id);
+    }
+
+
 }

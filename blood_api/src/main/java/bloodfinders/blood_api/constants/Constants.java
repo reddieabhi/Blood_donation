@@ -5,7 +5,9 @@ import org.springframework.beans.factory.annotation.Value;
 public class Constants {
 
     //events
-    public static final String EVENT_STATUS_CREATED = "Created";
+    public static final String EVENT_STATUS_CREATED = "ACTIVE";
+    public static final String EVENT_STATUS_CLOSED = "CLOSED";
+    public static final String EVENT_STATUS_TERMINATED = "TERMINATED";
 
     // emails
     public static final String SMTP_HOST = "smtp.gmail.com";

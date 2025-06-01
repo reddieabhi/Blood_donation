@@ -9,5 +9,7 @@ import java.util.UUID;
 
 public interface AcceptedRequestRepository extends JpaRepository <AcceptedRequest, UUID> {
     List<AcceptedRequest> findByEventId(UUID eid);
+    List<AcceptedRequest> findAllByAcceptorId(UUID uid);
+
 }
 

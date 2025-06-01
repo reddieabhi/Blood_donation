@@ -16,7 +16,7 @@ public class FirebaseConfig {
         try {
             InputStream serviceAccount = getClass()
                     .getClassLoader()
-                    .getResourceAsStream("bloodfinders_firebase_config.json");
+                    .getResourceAsStream("findyourblood-firebase-adminsdk-fbsvc-4420250ec9.json");
 
             if (serviceAccount == null) {
                 throw new IllegalStateException("Firebase config not found");
