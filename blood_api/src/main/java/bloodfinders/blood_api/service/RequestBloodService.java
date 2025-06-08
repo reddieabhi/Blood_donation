@@ -2,7 +2,6 @@ package bloodfinders.blood_api.service;
 
 import bloodfinders.blood_api.constants.Constants;
 import bloodfinders.blood_api.model.DTO.EventDetailsDTO;
-import bloodfinders.blood_api.model.response.RequestResponse;
 import bloodfinders.blood_api.model.DTO.UserPushTokenDTO;
 import bloodfinders.blood_api.model.Event;
 import bloodfinders.blood_api.model.User;
@@ -228,6 +227,29 @@ public class RequestBloodService {
         }
 
         return ResponseEntity.status(HttpStatus.OK).body(eventDtoList);
+
+    }
+
+    public ResponseEntity<EventDetailsDTO> updateEvent(UUID eid, EventDetailsDTO dto) {
+        Event event = eventRepository.findById(eid)
+                .orElseThrow(() -> new RuntimeException("Event not found"));
+
+        if (dto.getBloodGroup() != null) event.setBloodGroup(dto.getBloodGroup());
+        if (dto.getCurrentStatus() != null) event.setCurrentStatus(dto.getCurrentStatus());
+        if (dto.getPlace() != null) event.setPlace(dto.getPlace());
+
+        if (dto.getLatitude() != 0.0 && dto.getLongitude() != 0.0) {
+            Point location = geometryFactory.createPoint(new Coordinate(dto.getLongitude(), dto.getLatitude())); // (lon, lat)
+            location.setSRID(4326);
+            event.setLocation(location);
+        }
+
+        eventRepository.save(event);
+
+        EventDetailsDTO updatedDTO = getEventDetailsDTOfromEvent(event);
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("message", "Event updated successfully")
+                .body(updatedDTO);
 
     }
 }

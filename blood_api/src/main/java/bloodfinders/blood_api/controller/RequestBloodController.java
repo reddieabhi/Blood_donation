@@ -36,6 +36,11 @@ public class RequestBloodController {
         return requestBloodService.getEvent(id);
     }
 
+    @PatchMapping("event/{eid}")
+    public ResponseEntity<EventDetailsDTO>  updateEvent(@PathVariable UUID eid, @RequestBody EventDetailsDTO eventDetailsDTO){
+        return requestBloodService.updateEvent(eid, eventDetailsDTO);
+    }
+
     @GetMapping("/get-near-requests")
     public ResponseEntity<List<EventDetailsDTO>> getNearEvents(@RequestBody Geo geo){
         logger.debug("Incoming request to fetch near by events");

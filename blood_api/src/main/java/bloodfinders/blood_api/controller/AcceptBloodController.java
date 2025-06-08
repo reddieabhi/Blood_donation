@@ -45,7 +45,7 @@ public class AcceptBloodController {
         return acceptService.getAllAcceptors(eid);
     }
 
-    @GetMapping("/get-all-my-accepted/{id}")
+    @GetMapping("/get-all-my-accepted/{uid}")
     public ResponseEntity<List<AcceptedRequest>> getAllMyAccepted(@PathVariable UUID uid){
         logger.info("Received get all my accepted requests for id : {}", uid);
         return acceptService.getAllMyAccepted(uid);
